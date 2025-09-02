@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Spintatech Success Stories</title>
+    <meta name="description" content="See how Spintatech delivers results for clients in banking, retail, healthcare, and more. Real-world case studies and success stories.">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Spintatech</a>
+                
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="industries.html" class="nav-link">Industries</a></li>
+                        <li><a href="case-studies.html" class="nav-link active">Case Studies</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="careers.html" class="nav-link">Careers</a></li>
+                        <li><a href="insights.html" class="nav-link">Insights</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <div class="language-option active" onclick="changeLanguage('en')">
+                                <span>🇺🇸</span>
+                                <div>
+                                    <div>English</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">English</div>
+                                </div>
+                                <span style="margin-left: auto;">✓</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('hi')">
+                                <span>🇮🇳</span>
+                                <div>
+                                    <div>हिंदी</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">Hindi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div style="padding: 1rem;">
+                <div style="margin-bottom: 1rem; padding: 1rem; background: var(--gray-50); border-radius: 0.5rem;">
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="mobile-current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="../index.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Home</a>
+                <a href="services.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Services</a>
+                <a href="industries.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Industries</a>
+                <a href="case-studies.html" class="nav-link active" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Case Studies</a>
+                <a href="about.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">About</a>
+                <a href="careers.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Careers</a>
+                <a href="insights.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Insights</a>
+                <a href="contact.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="py-20">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <h1 class="mb-4">Case Studies</h1>
+                    <p style="font-size: 1.25rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;">See how Spintatech delivers results for clients in banking, retail, healthcare, and more.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;" id="case-study-filters">
+                    <button class="btn btn-outline filter-btn active" data-filter="all">All Industries</button>
+                    <button class="btn btn-outline filter-btn" data-filter="banking">Banking</button>
+                    <button class="btn btn-outline filter-btn" data-filter="retail">Retail</button>
+                    <button class="btn btn-outline filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="btn btn-outline filter-btn" data-filter="manufacturing">Manufacturing</button>
+                </div>
+
+                <!-- Case Studies Grid -->
+                <div style="max-width: 48rem; margin: 0 auto;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;" id="case-studies-container">
+                        
+                        <!-- Case Study 1: Banking Digital Transformation -->
+                        <div class="card case-study-card" style="padding: 2rem;" data-industry="banking" data-service="digital-transformation">
+                            <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div style="width: 4rem; height: 4rem; background: rgba(30, 58, 138, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                                        <path d="M3 21h18"></path>
+                                        <path d="M5 21V7l8-4v18"></path>
+                                        <path d="M19 21V11l-6-4"></path>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 1rem;">
+                                        <div>
+                                            <h2 style="margin: 0; margin-bottom: 0.25rem;">Digital Transformation for Global Bank</h2>
+                                            <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">Global Bank</span>
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">2024-06-10</span>
+                                            </div>
+                                        </div>
+                                        <span style="background: rgba(30, 58, 138, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap;">Banking & Finance</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">Migrated legacy systems to the cloud, improved security, and enabled real-time analytics for a leading global bank.</p>
+                            
+                            <!-- Key Metrics -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--gray-50); border-radius: 0.75rem;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">30%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Cost Reduction</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">50%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Faster Processing</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">99.9%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Uptime</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technologies Used -->
+                            <div style="margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Technologies Used:</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">AWS</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Kubernetes</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Microservices</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">React</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Node.js</span>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <button class="btn btn-primary" onclick="openCaseStudyModal('banking-digital-transformation')">
+                                    Read Full Case Study
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-outline" onclick="downloadCaseStudy('banking-digital-transformation')">
+                                    Download PDF
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 2: Retail AI Automation -->
+                        <div class="card case-study-card" style="padding: 2rem;" data-industry="retail" data-service="data-ai">
+                            <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div style="width: 4rem; height: 4rem; background: rgba(30, 58, 138, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                                                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 1rem;">
+                                        <div>
+                                            <h2 style="margin: 0; margin-bottom: 0.25rem;">AI Automation for Retail Giant</h2>
+                                            <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">Retail Giant</span>
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">2024-05-20</span>
+                                            </div>
+                                        </div>
+                                        <span style="background: rgba(34, 197, 94, 0.1); color: #16a34a; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap;">Retail & E-commerce</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">Implemented AI-driven inventory management and personalized marketing campaigns across all channels.</p>
+                            
+                            <!-- Key Metrics -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--gray-50); border-radius: 0.75rem;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">18%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Sales Increase</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">40%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Reduced Stockouts</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">25%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Better Conversion</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technologies Used -->
+                            <div style="margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Technologies Used:</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Python</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">TensorFlow</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Apache Kafka</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">MongoDB</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Redis</span>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <button class="btn btn-primary" onclick="openCaseStudyModal('retail-ai-automation')">
+                                    Read Full Case Study
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-outline" onclick="downloadCaseStudy('retail-ai-automation')">
+                                    Download PDF
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 3: Healthcare Platform -->
+                        <div class="card case-study-card" style="padding: 2rem;" data-industry="healthcare" data-service="digital-transformation">
+                            <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div style="width: 4rem; height: 4rem; background: rgba(30, 58, 138, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 1rem;">
+                                        <div>
+                                            <h2 style="margin: 0; margin-bottom: 0.25rem;">Telemedicine Platform for Healthcare Network</h2>
+                                            <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">MedCare Network</span>
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">2024-04-15</span>
+                                            </div>
+                                        </div>
+                                        <span style="background: rgba(239, 68, 68, 0.1); color: #dc2626; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap;">Healthcare</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">Built a comprehensive telemedicine platform with EHR integration, video consultations, and HIPAA compliance.</p>
+                            
+                            <!-- Key Metrics -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--gray-50); border-radius: 0.75rem;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">60%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">More Consultations</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">45%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Reduced Wait Time</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">95%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Patient Satisfaction</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technologies Used -->
+                            <div style="margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Technologies Used:</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">React Native</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">WebRTC</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">FHIR</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">PostgreSQL</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Docker</span>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <button class="btn btn-primary" onclick="openCaseStudyModal('healthcare-telemedicine')">
+                                    Read Full Case Study
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-outline" onclick="downloadCaseStudy('healthcare-telemedicine')">
+                                    Download PDF
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 4: Manufacturing IoT -->
+                        <div class="card case-study-card" style="padding: 2rem;" data-industry="manufacturing" data-service="cloud-devops">
+                            <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div style="width: 4rem; height: 4rem; background: rgba(30, 58, 138, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 1rem;">
+                                        <div>
+                                            <h2 style="margin: 0; margin-bottom: 0.25rem;">Smart Factory IoT Implementation</h2>
+                                            <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">TechManufacturing Corp</span>
+                                                <span style="font-size: 0.875rem; color: var(--gray-500);">2024-03-10</span>
+                                            </div>
+                                        </div>
+                                        <span style="background: rgba(168, 85, 247, 0.1); color: #7c3aed; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap;">Manufacturing</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">Deployed IoT sensors and predictive analytics to optimize production efficiency and reduce downtime.</p>
+
+                            <!-- Key Metrics -->
+                                                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--gray-50); border-radius: 0.75rem;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">35%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Reduced Downtime</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">22%</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Efficiency Gain</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">$2M</div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600);">Annual Savings</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Technologies Used -->
+                            <div style="margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Technologies Used:</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Azure IoT</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Time Series DB</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Power BI</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Edge Computing</span>
+                                    <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Machine Learning</span>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <button class="btn btn-primary" onclick="openCaseStudyModal('manufacturing-iot')">
+                                    Read Full Case Study
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-outline" onclick="downloadCaseStudy('manufacturing-iot')">
+                                    Download PDF
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div style="text-center; margin-top: 3rem;" id="load-more-container">
+                    <button class="btn btn-outline btn-lg" onclick="loadMoreCaseStudies()">
+                        Load More Case Studies
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14"></path>
+                            <path d="M5 12h14"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- CTA Section -->
+                <section class="py-16 text-center" style="margin-top: 4rem;">
+                    <div class="container">
+                        <h2 class="mb-4">Ready to Create Your Success Story?</h2>
+                        <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem; max-width: 32rem; margin-left: auto; margin-right: auto;">Let's discuss how we can help you achieve similar results for your business.</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="contact.html" class="btn btn-primary btn-lg">
+                                Start Your Project
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12,5 19,12 12,19"></polyline>
+                                </svg>
+                            </a>
+                            <a href="services.html" class="btn btn-outline btn-lg">
+                                Explore Services
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Case Study Modal -->
+    <div id="case-study-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 10000; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="background: white; border-radius: 1rem; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative;">
+            <div style="position: sticky; top: 0; background: white; border-bottom: 1px solid var(--gray-200); padding: 1.5rem; border-radius: 1rem 1rem 0 0; z-index: 1;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2 style="margin: 0;" id="modal-case-study-title">Case Study Details</h2>
+                    <button onclick="closeCaseStudyModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-500); padding: 0.5rem;">&times;</button>
+                </div>
+            </div>
+            
+            <div style="padding: 2rem;" id="modal-case-study-content">
+                <!-- Content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div style="grid-column: span 2;">
+                    <div style="display: inline-block;">
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; background: linear-gradient(to right, white, var(--gray-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Spintatech
+                        </div>
+                    </div>
+                    <p style="color: var(--gray-400); margin-bottom: 1.5rem; max-width: 28rem; line-height: 1.6;" data-translate="footer.description">Transforming businesses through innovative technology solutions and deep industry expertise.</p>
+                    <div style="color: var(--accent); font-weight: 600; font-size: 1.125rem;" data-translate="footer.tagline">Engineering Digital Excellence</div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 data-translate="footer.quick_links">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h3 data-translate="footer.services_links">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#cloud-devops">Cloud & DevOps</a></li>
+                        <li><a href="services.html#data-ai">Data & AI</a></li>
+                        <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-800);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <a href="mailto:contact@spintatech.com" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%; transition: background 0.3s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <span>contact@spintatech.com</span>
+                    </a>
+                    <a href="tel:+912012345678" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <span>+91 20 1234 5678</span>
+                    </a>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300);">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <span>Pune, Maharashtra, India</span>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div style="text-align: center; color: var(--gray-500); font-size: 0.875rem; padding-top: 1rem; border-top: 1px solid rgba(55, 65, 81, 0.5);" data-translate="footer.copyright">
+                    © 2024 Spintatech Services. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()" id="chat-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-weight: bold; font-size: 1.125rem;">Spintatech Assistant</span>
+                    <span style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 0.25rem; background: var(--accent); color: var(--primary); font-size: 0.75rem; font-weight: 600;">Menu</span>
+                </div>
+                                <div style="display: flex; align-items: center; gap: 0.25rem;">
+                    <button onclick="changeChatLanguage('en')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-en" class="active">EN</button>
+                    <button onclick="changeChatLanguage('hi')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-hi">HI</button>
+                    <button onclick="toggleChat()" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div style="margin-bottom: 2rem; font-size: 1rem; font-weight: 500; text-align: center;" id="chat-message">
+                    Hello! I'm here to help you learn about Spintatech Services. How can I assist you today?
+                </div>
+                <div class="chat-options" id="chat-options">
+                    <button class="chat-option" onclick="handleChatOption('services')">
+                        🔧 Learn about our services
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('industries')">
+                        🏢 Industries we serve
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('contact')">
+                        📞 Get in touch
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('about')">
+                        ℹ️ About Spintatech
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/translations.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Case Studies specific JavaScript -->
+    <script>
+        // Case studies data
+        const caseStudiesData = {
+            'banking-digital-transformation': {
+                title: 'Digital Transformation for Global Bank',
+                client: 'Global Bank',
+                industry: 'Banking & Finance',
+                date: '2024-06-10',
+                challenge: 'The client was struggling with legacy systems that were slow, expensive to maintain, and couldn\'t support modern banking requirements. They needed a complete digital transformation to stay competitive.',
+                solution: 'We migrated their core banking systems to AWS, implemented microservices architecture, and built modern APIs. The solution included real-time analytics, enhanced security, and automated compliance reporting.',
+                results: [
+                    '30% reduction in IT operational costs',
+                    '50% faster transaction processing',
+                    '99.9% system uptime achieved',
+                    'Enhanced security with zero breaches',
+                    'Real-time analytics and reporting'
+                ],
+                technologies: ['AWS', 'Kubernetes', 'Microservices', 'React', 'Node.js', 'PostgreSQL'],
+                timeline: '8 months',
+                teamSize: '12 engineers'
+            },
+            'retail-ai-automation': {
+                title: 'AI Automation for Retail Giant',
+                client: 'Retail Giant',
+                industry: 'Retail & E-commerce',
+                date: '2024-05-20',
+                challenge: 'The retail chain faced inventory management issues, stockouts, and ineffective marketing campaigns. They needed AI-driven solutions to optimize operations and improve customer experience.',
+                solution: 'We implemented machine learning models for demand forecasting, automated inventory management, and personalized marketing campaigns. The solution included real-time analytics and customer behavior tracking.',
+                results: [
+                    '18% increase in overall sales',
+                    '40% reduction in stockouts',
+                    '25% improvement in conversion rates',
+                    'Personalized experiences for 2M+ customers',
+                    'Automated inventory optimization'
+                ],
+                technologies: ['Python', 'TensorFlow', 'Apache Kafka', 'MongoDB', 'Redis', 'React'],
+                timeline: '6 months',
+                teamSize: '8 engineers'
+            },
+            'healthcare-telemedicine': {
+                title: 'Telemedicine Platform for Healthcare Network',
+                client: 'MedCare Network',
+                industry: 'Healthcare',
+                date: '2024-04-15',
+                challenge: 'The healthcare network needed to provide remote consultations during the pandemic while maintaining HIPAA compliance and integrating with existing EHR systems.',
+                solution: 'We built a comprehensive telemedicine platform with video consultations, EHR integration, appointment scheduling, and prescription management. The platform ensured HIPAA compliance and seamless user experience.',
+                results: [
+                    '60% increase in consultation capacity',
+                    '45% reduction in patient wait times',
+                    '95% patient satisfaction score',
+                    'HIPAA compliant platform',
+                    'Seamless EHR integration'
+                ],
+                technologies: ['React Native', 'WebRTC', 'FHIR', 'PostgreSQL', 'Docker', 'AWS'],
+                timeline: '10 months',
+                teamSize: '15 engineers'
+            },
+            'manufacturing-iot': {
+                title: 'Smart Factory IoT Implementation',
+                client: 'TechManufacturing Corp',
+                industry: 'Manufacturing',
+                date: '2024-03-10',
+                challenge: 'The manufacturing company experienced frequent equipment downtime, inefficient production processes, and lack of real-time visibility into operations.',
+                solution: 'We deployed IoT sensors across the factory floor, implemented predictive maintenance algorithms, and created real-time dashboards for production monitoring and optimization.',
+                results: [
+                    '35% reduction in equipment downtime',
+                    '22% improvement in production efficiency',
+                    '$2M annual cost savings',
+                    'Predictive maintenance implementation',
+                    'Real-time production monitoring'
+                ],
+                technologies: ['Azure IoT', 'Time Series DB', 'Power BI', 'Edge Computing', 'Machine Learning'],
+                timeline: '12 months',
+                teamSize: '10 engineers'
+            }
+        };
+
+        // Additional case studies for load more functionality
+        const additionalCaseStudies = [
+            {
+                id: 'fintech-mobile-app',
+                title: 'Mobile Banking App for Fintech Startup',
+                client: 'FinTech Innovations',
+                industry: 'banking',
+                date: '2024-02-28',
+                summary: 'Built a secure mobile banking application with biometric authentication and real-time fraud detection.',
+                metrics: { users: '500K+', rating: '4.8/5', transactions: '$50M+' },
+                technologies: ['React Native', 'Biometrics', 'Machine Learning', 'AWS']
+            },
+            {
+                id: 'ecommerce-platform',
+                title: 'E-commerce Platform Modernization',
+                client: 'Fashion Forward',
+                industry: 'retail',
+                date: '2024-01-15',
+                summary: 'Modernized legacy e-commerce platform with microservices architecture and improved performance.',
+                metrics: { performance: '+75%', sales: '+40%', uptime: '99.95%' },
+                technologies: ['Microservices', 'Kubernetes', 'Redis', 'Elasticsearch']
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize filter functionality
+            initializeFilters();
+            
+            // Animate case study cards on scroll
+            animateCaseStudyCards();
+            
+            // Initialize modal functionality
+            initializeModal();
+        });
+
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const caseStudyCards = document.querySelectorAll('.case-study-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.background = '';
+                        btn.style.color = '';
+                    });
+                    
+                    this.classList.add('active');
+                    this.style.background = 'var(--primary)';
+                    this.style.color = 'white';
+                    
+                    // Filter case studies
+                    filterCaseStudies(filter);
+                    
+                    // Track filter usage
+                    trackEvent('case_studies_filtered', {
+                        filter: filter,
+                        visible_count: document.querySelectorAll('.case-study-card[style*="display: block"]').length
+                    });
+                });
+            });
+        }
+
+        function filterCaseStudies(filter) {
+            const caseStudyCards = document.querySelectorAll('.case-study-card');
+            
+            caseStudyCards.forEach(card => {
+                const industry = card.getAttribute('data-industry');
+                
+                if (filter === 'all' || industry === filter) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        function animateCaseStudyCards() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 200);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            const caseStudyCards = document.querySelectorAll('.case-study-card');
+            caseStudyCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(card);
+            });
+        }
+
+        function initializeModal() {
+            const modal = document.getElementById('case-study-modal');
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeCaseStudyModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    closeCaseStudyModal();
+                }
+            });
+        }
+
+        function openCaseStudyModal(caseStudyId) {
+            const caseStudy = caseStudiesData[caseStudyId];
+            if (!caseStudy) return;
+            
+            const modal = document.getElementById('case-study-modal');
+            const titleElement = document.getElementById('modal-case-study-title');
+            const contentElement = document.getElementById('modal-case-study-content');
+            
+            titleElement.textContent = caseStudy.title;
+            
+            contentElement.innerHTML = `
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                        <div>
+                            <strong>Client:</strong> ${caseStudy.client}
+                        </div>
+                        <div>
+                            <strong>Industry:</strong> ${caseStudy.industry}
+                        </div>
+                        <div>
+                            <strong>Date:</strong> ${caseStudy.date}
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                        <div>
+                            <strong>Timeline:</strong> ${caseStudy.timeline}
+                        </div>
+                        <div>
+                            <strong>Team Size:</strong> ${caseStudy.teamSize}
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Challenge</h3>
+                    <p style="color: var(--gray-600); line-height: 1.6;">${caseStudy.challenge}</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Solution</h3>
+                    <p style="color: var(--gray-600); line-height: 1.6;">${caseStudy.solution}</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Results</h3>
+                    <ul style="color: var(--gray-600); line-height: 1.8;">
+                        ${caseStudy.results.map(result => `<li style="margin-bottom: 0.5rem;">${result}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Technologies Used</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        ${caseStudy.technologies.map(tech => `
+                            <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.875rem;">${tech}</span>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--gray-200);">
+                    <button class="btn btn-primary" onclick="downloadCaseStudy('${caseStudyId}')">
+                        Download Full Case Study
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </button>
+                    <a href="contact.html" class="btn btn-outline">
+                        Discuss Similar Project
+                    </a>
+                </div>
+            `;
+            
+            modal.style.display = 'flex';
+            
+                        // Track modal open
+            trackEvent('case_study_viewed', {
+                case_study_id: caseStudyId,
+                case_study_title: caseStudy.title,
+                client: caseStudy.client,
+                industry: caseStudy.industry
+            });
+        }
+
+        function closeCaseStudyModal() {
+            const modal = document.getElementById('case-study-modal');
+            modal.style.display = 'none';
+        }
+
+        function downloadCaseStudy(caseStudyId) {
+            // Simulate PDF download
+            const caseStudy = caseStudiesData[caseStudyId];
+            if (!caseStudy) return;
+            
+            // Track download
+            trackEvent('case_study_downloaded', {
+                case_study_id: caseStudyId,
+                case_study_title: caseStudy.title,
+                format: 'pdf'
+            });
+            
+            // Show download notification
+            showAlert('Case study download started. Check your downloads folder.', 'success');
+            
+            // In a real implementation, this would trigger an actual PDF download
+            // For demo purposes, we'll just show a notification
+            setTimeout(() => {
+                showAlert('This is a demo. In production, a PDF would be downloaded.', 'info');
+            }, 2000);
+        }
+
+        function loadMoreCaseStudies() {
+            const container = document.getElementById('case-studies-container');
+            const loadMoreBtn = document.getElementById('load-more-container');
+            
+            // Add additional case studies
+            additionalCaseStudies.forEach((caseStudy, index) => {
+                const caseStudyHTML = createCaseStudyHTML(caseStudy);
+                container.insertAdjacentHTML('beforeend', caseStudyHTML);
+                
+                // Animate new cards
+                const newCard = container.lastElementChild;
+                newCard.style.opacity = '0';
+                newCard.style.transform = 'translateY(30px)';
+                newCard.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                
+                setTimeout(() => {
+                    newCard.style.opacity = '1';
+                    newCard.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+            
+            // Hide load more button
+            loadMoreBtn.style.display = 'none';
+            
+            // Track load more action
+            trackEvent('case_studies_load_more', {
+                additional_count: additionalCaseStudies.length
+            });
+        }
+
+        function createCaseStudyHTML(caseStudy) {
+            const industryColors = {
+                banking: 'rgba(30, 58, 138, 0.1)',
+                retail: 'rgba(34, 197, 94, 0.1)',
+                healthcare: 'rgba(239, 68, 68, 0.1)',
+                manufacturing: 'rgba(168, 85, 247, 0.1)'
+            };
+            
+            const industryTextColors = {
+                banking: 'var(--primary)',
+                retail: '#16a34a',
+                healthcare: '#dc2626',
+                manufacturing: '#7c3aed'
+            };
+            
+            return `
+                <div class="card case-study-card" style="padding: 2rem;" data-industry="${caseStudy.industry}" data-service="mixed">
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div style="width: 4rem; height: 4rem; background: ${industryColors[caseStudy.industry]}; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${industryTextColors[caseStudy.industry]}" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 1rem;">
+                                <div>
+                                    <h2 style="margin: 0; margin-bottom: 0.25rem;">${caseStudy.title}</h2>
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">${caseStudy.client}</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">${caseStudy.date}</span>
+                                    </div>
+                                </div>
+                                <span style="background: ${industryColors[caseStudy.industry]}; color: ${industryTextColors[caseStudy.industry]}; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; white-space: nowrap; text-transform: capitalize;">${caseStudy.industry}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">${caseStudy.summary}</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--gray-50); border-radius: 0.75rem;">
+                        ${Object.entries(caseStudy.metrics).map(([key, value]) => `
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.25rem;">${value}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-600); text-transform: capitalize;">${key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Technologies Used:</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            ${caseStudy.technologies.map(tech => `
+                                <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">${tech}</span>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="openCaseStudyModal('${caseStudy.id}')">
+                            Read Full Case Study
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </button>
+                        <button class="btn btn-outline" onclick="downloadCaseStudy('${caseStudy.id}')">
+                            Download PDF
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Search functionality for case studies
+        function searchCaseStudies(query) {
+            const caseStudyCards = document.querySelectorAll('.case-study-card');
+            const searchTerm = query.toLowerCase();
+            
+            caseStudyCards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const client = card.querySelector('span').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                const isMatch = title.includes(searchTerm) || 
+                               client.includes(searchTerm) || 
+                               description.includes(searchTerm);
+                
+                if (isMatch) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    
+                    // Highlight matching text
+                    highlightSearchTerm(card, searchTerm);
+                } else {
+                    card.style.opacity = '0.3';
+                }
+            });
+            
+            trackEvent('case_studies_searched', {
+                query: query,
+                results_count: document.querySelectorAll('.case-study-card[style*="opacity: 1"]').length
+            });
+        }
+
+        function highlightSearchTerm(element, term) {
+            const textElements = element.querySelectorAll('h2, p, span');
+            textElements.forEach(el => {
+                const text = el.textContent;
+                const regex = new RegExp(`(${term})`, 'gi');
+                const highlightedText = text.replace(regex, '<mark style="background: yellow; padding: 0.1rem;">$1</mark>');
+                
+                if (highlightedText !== text) {
+                    el.innerHTML = highlightedText;
+                }
+            });
+        }
+
+        // Case study sharing functionality
+        function shareCaseStudy(caseStudyId) {
+            const caseStudy = caseStudiesData[caseStudyId];
+            if (!caseStudy) return;
+            
+            const shareData = {
+                title: caseStudy.title,
+                text: `Check out this case study: ${caseStudy.title}`,
+                url: window.location.href + '#' + caseStudyId
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData).then(() => {
+                    trackEvent('case_study_shared', {
+                        case_study_id: caseStudyId,
+                        method: 'native'
+                    });
+                });
+            } else {
+                // Fallback to clipboard
+                navigator.clipboard.writeText(shareData.url).then(() => {
+                    showAlert('Case study link copied to clipboard!', 'success');
+                    trackEvent('case_study_shared', {
+                        case_study_id: caseStudyId,
+                        method: 'clipboard'
+                    });
+                });
+            }
+        }
+
+        // Case study comparison functionality
+        let selectedCaseStudies = [];
+
+        function toggleCaseStudySelection(caseStudyId) {
+            const index = selectedCaseStudies.indexOf(caseStudyId);
+            if (index > -1) {
+                selectedCaseStudies.splice(index, 1);
+            } else {
+                selectedCaseStudies.push(caseStudyId);
+            }
+            
+            updateCaseStudySelection();
+        }
+
+        function updateCaseStudySelection() {
+            document.querySelectorAll('.case-study-card').forEach(card => {
+                const caseStudyId = card.querySelector('button[onclick*="openCaseStudyModal"]')
+                    ?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+                
+                if (caseStudyId && selectedCaseStudies.includes(caseStudyId)) {
+                    card.style.borderColor = 'var(--primary)';
+                    card.style.boxShadow = '0 0 0 2px rgba(30, 58, 138, 0.2)';
+                } else {
+                    card.style.borderColor = '';
+                    card.style.boxShadow = '';
+                }
+            });
+            
+            // Show/hide compare button
+            const compareButton = document.getElementById('compare-case-studies');
+            if (compareButton) {
+                compareButton.style.display = selectedCaseStudies.length > 1 ? 'block' : 'none';
+            }
+        }
+
+        function compareCaseStudies() {
+            if (selectedCaseStudies.length < 2) {
+                showAlert('Please select at least 2 case studies to compare', 'info');
+                return;
+            }
+            
+            // Create comparison view
+            const comparisonData = selectedCaseStudies.map(id => caseStudiesData[id]).filter(Boolean);
+            
+            trackEvent('case_studies_compared', {
+                case_studies: selectedCaseStudies,
+                count: selectedCaseStudies.length
+            });
+            
+            // Show comparison modal or redirect to comparison page
+            showCaseStudyComparison(comparisonData);
+        }
+
+        function showCaseStudyComparison(caseStudies) {
+            // Create comparison modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10001;
+                padding: 2rem;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; border-radius: 1rem; padding: 2rem; max-width: 800px; width: 100%; max-height: 80vh; overflow-y: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h2 style="margin: 0;">Case Study Comparison</h2>
+                        <button onclick="this.closest('[style*=fixed]').remove()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left; padding: 1rem; border-bottom: 1px solid var(--gray-200);">Aspect</th>
+                                    ${caseStudies.map(cs => `<th style="text-align: left; padding: 1rem; border-bottom: 1px solid var(--gray-200);">${cs.title}</th>`).join('')}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 1rem; border-bottom: 1px solid var(--gray-200); font-weight: 600;">Industry</td>
+                                                                        ${caseStudies.map(cs => `<td style="padding: 1rem; border-bottom: 1px solid var(--gray-200);">${cs.industry}</td>`).join('')}
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1rem; border-bottom: 1px solid var(--gray-200); font-weight: 600;">Timeline</td>
+                                    ${caseStudies.map(cs => `<td style="padding: 1rem; border-bottom: 1px solid var(--gray-200);">${cs.timeline}</td>`).join('')}
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1rem; border-bottom: 1px solid var(--gray-200); font-weight: 600;">Team Size</td>
+                                    ${caseStudies.map(cs => `<td style="padding: 1rem; border-bottom: 1px solid var(--gray-200);">${cs.teamSize}</td>`).join('')}
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1rem; border-bottom: 1px solid var(--gray-200); font-weight: 600;">Key Results</td>
+                                    ${caseStudies.map(cs => `<td style="padding: 1rem; border-bottom: 1px solid var(--gray-200);"><ul style="margin: 0; padding-left: 1rem;">${cs.results.slice(0, 3).map(result => `<li style="margin-bottom: 0.25rem;">${result}</li>`).join('')}</ul></td>`).join('')}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <a href="contact.html" class="btn btn-primary">
+                            Discuss Your Project
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close on outside click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+        // Case study recommendation engine
+        function getRecommendedCaseStudies(userProfile) {
+            const recommendations = [];
+            
+            // Simple recommendation logic based on user profile
+            if (userProfile.industry === 'finance') {
+                recommendations.push('banking-digital-transformation');
+            } else if (userProfile.industry === 'healthcare') {
+                recommendations.push('healthcare-telemedicine');
+            } else if (userProfile.industry === 'retail') {
+                recommendations.push('retail-ai-automation');
+            } else if (userProfile.industry === 'manufacturing') {
+                recommendations.push('manufacturing-iot');
+            }
+            
+            if (userProfile.interests.includes('ai')) {
+                recommendations.push('retail-ai-automation');
+            }
+            
+            if (userProfile.interests.includes('cloud')) {
+                recommendations.push('banking-digital-transformation', 'manufacturing-iot');
+            }
+            
+            return [...new Set(recommendations)]; // Remove duplicates
+        }
+
+        // Export case studies page utilities
+        window.CaseStudiesPageUtils = {
+            filterCaseStudies,
+            searchCaseStudies,
+            shareCaseStudy,
+            toggleCaseStudySelection,
+            compareCaseStudies,
+            getRecommendedCaseStudies,
+            downloadCaseStudy
+        };
+
+        // Add case study bookmarking
+        function bookmarkCaseStudy(caseStudyId) {
+            const bookmarks = JSON.parse(localStorage.getItem('case_study_bookmarks') || '[]');
+            const caseStudy = caseStudiesData[caseStudyId];
+            
+            if (!bookmarks.find(b => b.id === caseStudyId)) {
+                bookmarks.push({
+                    id: caseStudyId,
+                    title: caseStudy.title,
+                    client: caseStudy.client,
+                    bookmarked_at: new Date().toISOString()
+                });
+                localStorage.setItem('case_study_bookmarks', JSON.stringify(bookmarks));
+                
+                trackEvent('case_study_bookmarked', {
+                    case_study_id: caseStudyId,
+                    case_study_title: caseStudy.title
+                });
+                
+                showAlert('Case study bookmarked!', 'success');
+            } else {
+                showAlert('Case study already bookmarked', 'info');
+            }
+        }
+
+        // Add related case studies functionality
+        function getRelatedCaseStudies(currentCaseStudyId) {
+            const currentCaseStudy = caseStudiesData[currentCaseStudyId];
+            if (!currentCaseStudy) return [];
+            
+            const related = [];
+            
+            // Find case studies in the same industry
+            Object.entries(caseStudiesData).forEach(([id, caseStudy]) => {
+                if (id !== currentCaseStudyId && caseStudy.industry === currentCaseStudy.industry) {
+                    related.push({ id, ...caseStudy, relevance: 'same_industry' });
+                }
+            });
+            
+            // Find case studies with similar technologies
+            Object.entries(caseStudiesData).forEach(([id, caseStudy]) => {
+                if (id !== currentCaseStudyId) {
+                    const commonTech = caseStudy.technologies.filter(tech => 
+                        currentCaseStudy.technologies.includes(tech)
+                    );
+                    
+                    if (commonTech.length > 0 && !related.find(r => r.id === id)) {
+                        related.push({ 
+                            id, 
+                            ...caseStudy, 
+                            relevance: 'similar_technology',
+                            commonTechnologies: commonTech
+                        });
+                    }
+                }
+            });
+            
+            return related.slice(0, 3); // Return top 3 related case studies
+        }
+
+        // Initialize page-specific features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add bookmark buttons to case study cards
+            const caseStudyCards = document.querySelectorAll('.case-study-card');
+            caseStudyCards.forEach(card => {
+                const bookmarkBtn = document.createElement('button');
+                bookmarkBtn.innerHTML = '🔖';
+                bookmarkBtn.style.cssText = `
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    background: white;
+                    border: 1px solid var(--gray-300);
+                    border-radius: 50%;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                `;
+                
+                card.style.position = 'relative';
+                card.appendChild(bookmarkBtn);
+                
+                bookmarkBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const caseStudyId = card.querySelector('button[onclick*="openCaseStudyModal"]')
+                        ?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+                    
+                    if (caseStudyId) {
+                        bookmarkCaseStudy(caseStudyId);
+                        this.style.background = 'var(--primary)';
+                        this.style.color = 'white';
+                    }
+                });
+            });
+            
+            // Add selection checkboxes for comparison
+            caseStudyCards.forEach(card => {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.style.cssText = `
+                    position: absolute;
+                    top: 1rem;
+                    left: 1rem;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    cursor: pointer;
+                    accent-color: var(--primary);
+                `;
+                
+                card.appendChild(checkbox);
+                
+                checkbox.addEventListener('change', function() {
+                    const caseStudyId = card.querySelector('button[onclick*="openCaseStudyModal"]')
+                        ?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+                    
+                    if (caseStudyId) {
+                        toggleCaseStudySelection(caseStudyId);
+                    }
+                });
+            });
+            
+            // Add compare button to the page
+            const compareButton = document.createElement('div');
+            compareButton.id = 'compare-case-studies';
+            compareButton.style.cssText = `
+                position: fixed;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--primary);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 2rem;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+                display: none;
+                z-index: 1000;
+                font-weight: 600;
+            `;
+            compareButton.textContent = 'Compare Selected Case Studies';
+            compareButton.addEventListener('click', compareCaseStudies);
+            
+            document.body.appendChild(compareButton);
+        });
+
+        // Add case study analytics
+        function trackCaseStudyEngagement() {
+            // Track time spent on page
+            const startTime = Date.now();
+            
+            window.addEventListener('beforeunload', function() {
+                const timeSpent = Date.now() - startTime;
+                trackEvent('case_studies_page_engagement', {
+                    time_spent_ms: timeSpent,
+                    time_spent_seconds: Math.round(timeSpent / 1000)
+                });
+            });
+            
+            // Track scroll depth
+            let maxScrollDepth = 0;
+            window.addEventListener('scroll', throttle(() => {
+                const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollDepth > maxScrollDepth) {
+                    maxScrollDepth = scrollDepth;
+                    
+                    // Track milestone scroll depths
+                    if ([25, 50, 75, 90].includes(scrollDepth)) {
+                        trackEvent('case_studies_scroll_depth', {
+                            depth_percentage: scrollDepth
+                        });
+                    }
+                }
+            }, 1000));
+        }
+
+        // Initialize analytics tracking
+        trackCaseStudyEngagement();
+    </script>
+</body>
+</html>
+                            
+                            

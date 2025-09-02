@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve | Spintatech Solutions</title>
+    <meta name="description" content="Specialized technology solutions for Banking & Financial Services, Healthcare, Retail & E-commerce, and Manufacturing industries.">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Spintatech</a>
+                
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="industries.html" class="nav-link active">Industries</a></li>
+                        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="careers.html" class="nav-link">Careers</a></li>
+                        <li><a href="insights.html" class="nav-link">Insights</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <div class="language-option active" onclick="changeLanguage('en')">
+                                <span>🇺🇸</span>
+                                <div>
+                                    <div>English</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">English</div>
+                                </div>
+                                <span style="margin-left: auto;">✓</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('hi')">
+                                <span>🇮🇳</span>
+                                <div>
+                                    <div>हिंदी</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">Hindi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div style="padding: 1rem;">
+                <div style="margin-bottom: 1rem; padding: 1rem; background: var(--gray-50); border-radius: 0.5rem;">
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="mobile-current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="../index.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Home</a>
+                <a href="services.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Services</a>
+                <a href="industries.html" class="nav-link active" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Industries</a>
+                <a href="case-studies.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Case Studies</a>
+                <a href="about.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">About</a>
+                <a href="careers.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Careers</a>
+                <a href="insights.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Insights</a>
+                <a href="contact.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="py-20">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <h1 class="mb-4" data-translate="industries.title">Industries We Serve</h1>
+                    <p style="font-size: 1.25rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;" data-translate="industries.subtitle">Specialized solutions for diverse industry verticals</p>
+                </div>
+
+                <!-- Industries Grid -->
+                <div class="industries-grid">
+                    <!-- Banking & Financial Services -->
+                    <div class="industry-card" id="bfsi">
+                        <div class="industry-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 21h18"></path>
+                                <path d="M5 21V7l8-4v18"></path>
+                                <path d="M19 21V11l-6-4"></path>
+                            </svg>
+                        </div>
+                        <h2 class="mb-3" data-translate="industries.bfsi.title">Banking & Financial Services</h2>
+                        <p class="mb-4" style="color: var(--gray-600);" data-translate="industries.bfsi.description">Secure fintech solutions and transaction platforms for the financial sector.</p>
+                        
+                        <!-- Solutions List -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Our Solutions:</h3>
+                            <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Core banking modernization
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Digital payments integration
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Regulatory compliance automation
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Risk management systems
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-primary">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Healthcare & Life Sciences -->
+                    <div class="industry-card" id="healthcare">
+                        <div class="industry-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h2 class="mb-3" data-translate="industries.healthcare.title">Healthcare & Life Sciences</h2>
+                        <p class="mb-4" style="color: var(--gray-600);" data-translate="industries.healthcare.description">Digital health records and compliance solutions for healthcare providers.</p>
+                        
+                        <!-- Solutions List -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Our Solutions:</h3>
+                            <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    EHR/EMR implementation
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Telemedicine platforms
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    HIPAA/GDPR compliance
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Patient data analytics
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-primary">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Retail & E-commerce -->
+                    <div class="industry-card" id="retail">
+                        <div class="industry-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <h2 class="mb-3" data-translate="industries.retail.title">Retail & E-commerce</h2>
+                        <p class="mb-4" style="color: var(--gray-600);" data-translate="industries.retail.description">Omnichannel experiences and supply chain optimization for retail businesses.</p>
+                        
+                        <!-- Solutions List -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Our Solutions:</h3>
+                            <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Inventory management systems
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Personalized marketing
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    E-commerce platform integration
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Customer analytics
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-primary">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Manufacturing -->
+                    <div class="industry-card" id="manufacturing">
+                        <div class="industry-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h2 class="mb-3" data-translate="industries.manufacturing.title">Manufacturing</h2>
+                        <p class="mb-4" style="color: var(--gray-600);" data-translate="industries.manufacturing.description">Industrial IoT and smart factory solutions for modern manufacturing.</p>
+                        
+                        <!-- Solutions List -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Our Solutions:</h3>
+                            <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    IoT-enabled production monitoring
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Predictive maintenance
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Supply chain analytics
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                        <polyline points="20,6 9,17 4,12"></polyline>
+                                    </svg>
+                                    Quality management systems
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-primary">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Industry Expertise Section -->
+                <section class="py-16" style="background: var(--gray-50); border-radius: 1rem; margin-top: 4rem;">
+                    <div class="container">
+                        <div class="text-center mb-12">
+                            <h2 class="mb-4">Why Choose Spintatech for Your Industry?</h2>
+                            <p style="font-size: 1.125rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;">Deep industry knowledge combined with cutting-edge technology expertise</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            <!-- Industry Expertise -->
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 11H1v3h8v3l3-4-3-4v2z"></path>
+                                        <path d="M22 12h-6"></path>
+                                        <path d="M16 16h6"></path>
+                                        <path d="M16 8h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Industry Expertise</h3>
+                                <p style="color: var(--gray-600);">Deep understanding of industry-specific challenges, regulations, and best practices.</p>
+                            </div>
+
+                            <!-- Proven Track Record -->
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                                    </svg>
+                                </div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Proven Track Record</h3>
+                                <p style="color: var(--gray-600);">Successful implementations across multiple industry verticals with measurable results.</p>
+                            </div>
+
+                            <!-- Compliance Focus -->
+                                                        <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <circle cx="12" cy="16" r="1"></circle>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Compliance Focus</h3>
+                                <p style="color: var(--gray-600);">Ensuring all solutions meet industry regulations and compliance requirements.</p>
+                            </div>
+
+                            <!-- Scalable Solutions -->
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Scalable Solutions</h3>
+                                <p style="color: var(--gray-600);">Future-ready architectures that grow with your business needs and market demands.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Case Studies Preview -->
+                <section class="py-16">
+                    <div class="container">
+                        <div class="text-center mb-12">
+                            <h2 class="mb-4">Success Stories</h2>
+                            <p style="font-size: 1.125rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;">See how we've helped organizations across industries achieve their digital transformation goals</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                            <!-- Case Study 1 -->
+                            <div class="card" style="padding: 2rem;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <div style="width: 3rem; height: 3rem; background: rgba(30, 58, 138, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                                            <path d="M3 21h18"></path>
+                                            <path d="M5 21V7l8-4v18"></path>
+                                            <path d="M19 21V11l-6-4"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 style="margin: 0; font-size: 1.125rem;">Global Bank</h3>
+                                        <p style="margin: 0; color: var(--gray-500); font-size: 0.875rem;">Banking & Finance</p>
+                                    </div>
+                                </div>
+                                <h4 style="margin-bottom: 0.75rem; color: var(--gray-800);">Digital Transformation for Global Bank</h4>
+                                <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">Migrated legacy systems to the cloud, improved security, and enabled real-time analytics.</p>
+                                <div style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">30% reduction in IT costs</div>
+                            </div>
+
+                            <!-- Case Study 2 -->
+                            <div class="card" style="padding: 2rem;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <div style="width: 3rem; height: 3rem; background: rgba(30, 58, 138, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 style="margin: 0; font-size: 1.125rem;">Retail Giant</h3>
+                                        <p style="margin: 0; color: var(--gray-500); font-size: 0.875rem;">Retail & E-commerce</p>
+                                    </div>
+                                </div>
+                                <h4 style="margin-bottom: 0.75rem; color: var(--gray-800);">AI Automation for Retail Giant</h4>
+                                <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">Implemented AI-driven inventory management and personalized marketing.</p>
+                                <div style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">18% increase in sales</div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-8">
+                            <a href="case-studies.html" class="btn btn-outline btn-lg">
+                                View All Case Studies
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12,5 19,12 12,19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="py-16 text-center">
+                    <div class="container">
+                        <h2 class="mb-4">Ready to Transform Your Industry?</h2>
+                        <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem; max-width: 32rem; margin-left: auto; margin-right: auto;">Let's discuss how our industry-specific solutions can drive your business forward.</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="contact.html" class="btn btn-primary btn-lg">
+                                Schedule Consultation
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12,5 19,12 12,19"></polyline>
+                                </svg>
+                            </a>
+                            <a href="services.html" class="btn btn-outline btn-lg">
+                                Explore Services
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div style="grid-column: span 2;">
+                    <div style="display: inline-block;">
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; background: linear-gradient(to right, white, var(--gray-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Spintatech
+                        </div>
+                    </div>
+                    <p style="color: var(--gray-400); margin-bottom: 1.5rem; max-width: 28rem; line-height: 1.6;" data-translate="footer.description">Transforming businesses through innovative technology solutions and deep industry expertise.</p>
+                    <div style="color: var(--accent); font-weight: 600; font-size: 1.125rem;" data-translate="footer.tagline">Engineering Digital Excellence</div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 data-translate="footer.quick_links">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h3 data-translate="footer.services_links">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#cloud-devops">Cloud & DevOps</a></li>
+                        <li><a href="services.html#data-ai">Data & AI</a></li>
+                        <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-800);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <a href="mailto:contact@spintatech.com" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%; transition: background 0.3s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <span>contact@spintatech.com</span>
+                    </a>
+                    <a href="tel:+912012345678" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <span>+91 20 1234 5678</span>
+                    </a>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300);">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <span>Pune, Maharashtra, India</span>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div style="text-align: center; color: var(--gray-500); font-size: 0.875rem; padding-top: 1rem; border-top: 1px solid rgba(55, 65, 81, 0.5);" data-translate="footer.copyright">
+                    © 2024 Spintatech Services. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()" id="chat-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-weight: bold; font-size: 1.125rem;">Spintatech Assistant</span>
+                    <span style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 0.25rem; background: var(--accent); color: var(--primary); font-size: 0.75rem; font-weight: 600;">Menu</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.25rem;">
+                    <button onclick="changeChatLanguage('en')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-en" class="active">EN</button>
+                    <button onclick="changeChatLanguage('hi')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-hi">HI</button>
+                    <button onclick="toggleChat()" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div style="margin-bottom: 2rem; font-size: 1rem; font-weight: 500; text-align: center;" id="chat-message">
+                    Hello! I'm here to help you learn about Spintatech Services. How can I assist you today?
+                </div>
+                <div class="chat-options" id="chat-options">
+                    <button class="chat-option" onclick="handleChatOption('services')">
+                        🔧 Learn about our services
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('industries')">
+                        🏢 Industries we serve
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('contact')">
+                        📞 Get in touch
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('about')">
+                        ℹ️ About Spintatech
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/translations.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Industry-specific JavaScript -->
+    <script>
+        // Industry page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate industry cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 150);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe industry cards
+            const industryCards = document.querySelectorAll('.industry-card');
+            industryCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(card);
+            });
+            
+            // Track industry interest
+            const industryLinks = document.querySelectorAll('.industry-card .btn');
+            industryLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const industryCard = this.closest('.industry-card');
+                    const industryName = industryCard.querySelector('h2').textContent;
+                    const industryId = industryCard.id;
+                    
+                    trackEvent('industry_interest', {
+                        industry_id: industryId,
+                        industry_name: industryName,
+                        action: 'learn_more_clicked'
+                    });
+                });
+            });
+            
+            // Highlight current industry from URL hash
+            function highlightCurrentIndustry() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const targetElement = document.querySelector(hash);
+                    if (targetElement && targetElement.classList.contains('industry-card')) {
+                        // Remove previous highlights
+                        document.querySelectorAll('.industry-card').forEach(card => {
+                            card.style.boxShadow = '';
+                            card.style.borderColor = '';
+                        });
+                        
+                        // Highlight current industry
+                        targetElement.style.boxShadow = '0 0 0 3px rgba(30, 58, 138, 0.2)';
+                        targetElement.style.borderColor = 'var(--primary)';
+                        
+                        // Scroll to industry with offset
+                        setTimeout(() => {
+                            const headerHeight = document.querySelector('.header').offsetHeight;
+                            const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }, 100);
+                        
+                        // Track industry view
+                        trackEvent('industry_viewed', {
+                            industry_id: hash.substring(1),
+                            industry_name: targetElement.querySelector('h2').textContent,
+                            source: 'direct_link'
+                        });
+                    }
+                }
+            }
+            
+            // Check for hash on load
+            highlightCurrentIndustry();
+            
+            // Listen for hash changes
+            window.addEventListener('hashchange', highlightCurrentIndustry);
+            
+            // Add hover effects to expertise cards
+            const expertiseCards = document.querySelectorAll('[style*="text-align: center; padding: 2rem;"]');
+            expertiseCards.forEach(card => {
+                const icon = card.querySelector('[style*="width: 4rem; height: 4rem"]');
+                
+                card.addEventListener('mouseenter', function() {
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1) rotate(5deg)';
+                        icon.style.transition = 'transform 0.3s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (icon) {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+            
+            // Industry comparison functionality
+            let selectedIndustries = [];
+            
+            function toggleIndustrySelection(industryId) {
+                const index = selectedIndustries.indexOf(industryId);
+                if (index > -1) {
+                    selectedIndustries.splice(index, 1);
+                } else {
+                    selectedIndustries.push(industryId);
+                }
+                
+                updateIndustrySelection();
+            }
+            
+            function updateIndustrySelection() {
+                document.querySelectorAll('.industry-card').forEach(card => {
+                    const isSelected = selectedIndustries.includes(card.id);
+                    if (isSelected) {
+                        card.style.borderColor = 'var(--primary)';
+                        card.style.boxShadow = '0 0 0 2px rgba(30, 58, 138, 0.2)';
+                    } else {
+                        card.style.borderColor = '';
+                        card.style.boxShadow = '';
+                    }
+                });
+                
+                // Show/hide compare button
+                const compareButton = document.getElementById('compare-industries');
+                if (compareButton) {
+                    compareButton.style.display = selectedIndustries.length > 1 ? 'block' : 'none';
+                }
+            }
+            
+            // Add selection functionality to industry cards
+            industryCards.forEach(card => {
+                // Add selection indicator
+                const selectionIndicator = document.createElement('div');
+                selectionIndicator.style.cssText = `
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border: 2px solid var(--gray-300);
+                    border-radius: 50%;
+                    background: white;
+                    cursor: pointer;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                `;
+                
+                card.style.position = 'relative';
+                card.appendChild(selectionIndicator);
+                
+                // Show selection indicator on hover
+                card.addEventListener('mouseenter', function() {
+                    selectionIndicator.style.display = 'flex';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!selectedIndustries.includes(card.id)) {
+                        selectionIndicator.style.display = 'none';
+                    }
+                });
+                
+                // Handle selection
+                selectionIndicator.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleIndustrySelection(card.id);
+                    
+                    if (selectedIndustries.includes(card.id)) {
+                        selectionIndicator.innerHTML = '✓';
+                        selectionIndicator.style.background = 'var(--primary)';
+                        selectionIndicator.style.color = 'white';
+                        selectionIndicator.style.borderColor = 'var(--primary)';
+                        selectionIndicator.style.display = 'flex';
+                    } else {
+                        selectionIndicator.innerHTML = '';
+                        selectionIndicator.style.background = 'white';
+                        selectionIndicator.style.color = 'var(--gray-600)';
+                        selectionIndicator.style.borderColor = 'var(--gray-300)';
+                    }
+                });
+            });
+            
+            // Industry filter functionality
+            function filterIndustriesBySize(size) {
+                const industryCards = document.querySelectorAll('.industry-card');
+                
+                // Simple filtering logic based on industry characteristics
+                const sizeMapping = {
+                    'startup': ['retail', 'manufacturing'],
+                    'sme': ['retail', 'manufacturing', 'healthcare'],
+                    'enterprise': ['bfsi', 'healthcare', 'manufacturing'],
+                    'all': ['bfsi', 'healthcare', 'retail', 'manufacturing']
+                };
+                
+                const visibleIndustries = sizeMapping[size] || sizeMapping['all'];
+                
+                industryCards.forEach(card => {
+                    const shouldShow = visibleIndustries.includes(card.id);
+                    
+                    if (shouldShow) {
+                        card.style.display = 'block';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+                
+                trackEvent('industries_filtered', {
+                    filter_type: 'company_size',
+                    filter_value: size,
+                    visible_count: visibleIndustries.length
+                });
+            }
+            
+            // Add filter buttons (if needed)
+            function addIndustryFilters() {
+                const filterContainer = document.createElement('div');
+                filterContainer.style.cssText = `
+                    display: flex;
+                    justify-content: center;
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                    flex-wrap: wrap;
+                `;
+                
+                const filters = [
+                    { label: 'All Industries', value: 'all' },
+                    { label: 'Startups', value: 'startup' },
+                    { label: 'SME', value: 'sme' },
+                    { label: 'Enterprise', value: 'enterprise' }
+                ];
+                
+                filters.forEach(filter => {
+                    const button = document.createElement('button');
+                    button.textContent = filter.label;
+                    button.className = 'btn btn-outline';
+                    button.style.cssText = `
+                        padding: 0.5rem 1rem;
+                        font-size: 0.875rem;
+                        ${filter.value === 'all' ? 'background: var(--primary); color: white;' : ''}
+                    `;
+                    
+                    button.addEventListener('click', function() {
+                        // Update active state
+                        filterContainer.querySelectorAll('button').forEach(btn => {
+                            btn.style.background = '';
+                            btn.style.color = '';
+                        });
+                        
+                        this.style.background = 'var(--primary)';
+                        this.style.color = 'white';
+                        
+                        // Filter industries
+                        filterIndustriesBySize(filter.value);
+                    });
+                    
+                    filterContainer.appendChild(button);
+                });
+                
+                // Insert filter container before industries grid
+                const industriesGrid = document.querySelector('.industries-grid');
+                if (industriesGrid) {
+                    industriesGrid.parentNode.insertBefore(filterContainer, industriesGrid);
+                }
+            }
+            
+            // Uncomment to add filters
+            // addIndustryFilters();
+            
+            // Export industry page utilities
+            window.IndustryPageUtils = {
+                filterIndustriesBySize,
+                toggleIndustrySelection,
+                selectedIndustries: () => selectedIndustries
+            };
+        });
+    </script>
+</body>
+</html>
+    

@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Blog | Spintatech Technology Expertise</title>
+    <meta name="description" content="Latest articles, insights, and best practices from Spintatech's technology experts. Stay updated with industry trends and innovations.">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Spintatech</a>
+                
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="industries.html" class="nav-link">Industries</a></li>
+                        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="careers.html" class="nav-link">Careers</a></li>
+                        <li><a href="insights.html" class="nav-link active">Insights</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <div class="language-option active" onclick="changeLanguage('en')">
+                                <span>🇺🇸</span>
+                                <div>
+                                    <div>English</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">English</div>
+                                </div>
+                                <span style="margin-left: auto;">✓</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('hi')">
+                                <span>🇮🇳</span>
+                                <div>
+                                    <div>हिंदी</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">Hindi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div style="padding: 1rem;">
+                <div style="margin-bottom: 1rem; padding: 1rem; background: var(--gray-50); border-radius: 0.5rem;">
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="mobile-current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="../index.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Home</a>
+                <a href="services.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Services</a>
+                <a href="industries.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Industries</a>
+                <a href="case-studies.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Case Studies</a>
+                <a href="about.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">About</a>
+                <a href="careers.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Careers</a>
+                <a href="insights.html" class="nav-link active" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Insights</a>
+                <a href="contact.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="py-20">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <h1 class="mb-4">Insights</h1>
+                    <p style="font-size: 1.25rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;">Latest articles, insights, and best practices from Spintatech's technology experts.</p>
+                </div>
+
+                <!-- Search and Filter Bar -->
+                <div style="max-width: 48rem; margin: 0 auto 3rem;">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <input type="text" id="insights-search" placeholder="Search articles..." style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 1rem;">
+                        </div>
+                        <button class="btn btn-primary" onclick="searchInsights()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                            </svg>
+                            Search
+                        </button>
+                    </div>
+                    
+                    <!-- Category Filters -->
+                    <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;" id="category-filters">
+                        <button class="btn btn-outline filter-btn active" data-category="all">All Topics</button>
+                        <button class="btn btn-outline filter-btn" data-category="cloud">Cloud</button>
+                        <button class="btn btn-outline filter-btn" data-category="ai">AI & ML</button>
+                        <button class="btn btn-outline filter-btn" data-category="security">Security</button>
+                        <button class="btn btn-outline filter-btn" data-category="devops">DevOps</button>
+                        <button class="btn btn-outline filter-btn" data-category="digital">Digital Transformation</button>
+                    </div>
+                </div>
+
+                <!-- Featured Article -->
+                <div style="max-width: 48rem; margin: 0 auto 4rem;">
+                    <div class="card" style="padding: 0; overflow: hidden;" id="featured-article">
+                        <div style="height: 200px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); position: relative; display: flex; align-items: center; justify-content: center;">
+                            <div style="position: absolute; top: 1rem; left: 1rem;">
+                                <span style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">Featured</span>
+                            </div>
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" style="opacity: 0.3;">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                                <span style="background: rgba(30, 58, 138, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">Cloud</span>
+                                <span style="font-size: 0.875rem; color: var(--gray-500);">August 1, 2024</span>
+                                <span style="font-size: 0.875rem; color: var(--gray-500);">5 min read</span>
+                            </div>
+                            <h2 style="margin-bottom: 1rem;">Cloud Migration Best Practices: A Complete Guide</h2>
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.6;">Learn how to migrate your enterprise workloads to the cloud efficiently and securely. This comprehensive guide covers planning, execution, and optimization strategies.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--gray-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <span style="font-weight: 600; color: var(--gray-600);">ST</span>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 0.875rem;">Spintatech Team</div>
+                                        <div style="font-size: 0.75rem; color: var(--gray-500);">Cloud Architects</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="openInsightModal('cloud-migration-best-practices')">
+                                    Read Article
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Articles Grid -->
+                <div style="max-width: 48rem; margin: 0 auto;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;" id="insights-container">
+                        
+                        <!-- Article 1: AI in Enterprise -->
+                        <div class="card insight-card" style="padding: 2rem;" data-category="ai" data-date="2024-07-15">
+                            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <div style="width: 5rem; height: 5rem; background: rgba(34, 197, 94, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                                        <span style="background: rgba(34, 197, 94, 0.1); color: #16a34a; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">AI & ML</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">July 15, 2024</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">8 min read</span>
+                                    </div>
+                                    <h3 style="margin-bottom: 0.75rem;">AI in Enterprise: Real-World Use Cases</h3>
+                                    <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Explore how AI and machine learning are transforming business operations across different industries with practical examples and implementation strategies.</p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="width: 2rem; height: 2rem; background: var(--gray-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                                <span style="font-weight: 600; color: var(--gray-600); font-size: 0.75rem;">RK</span>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; font-size: 0.875rem;">Raj Kumar</div>
+                                                                                                <div style="font-size: 0.75rem; color: var(--gray-500);">AI/ML Engineer</div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-outline" onclick="openInsightModal('ai-in-enterprise')">
+                                            Read More
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12,5 19,12 12,19"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 2: DevOps Security -->
+                        <div class="card insight-card" style="padding: 2rem;" data-category="security" data-date="2024-07-08">
+                            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <div style="width: 5rem; height: 5rem; background: rgba(239, 68, 68, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <circle cx="12" cy="16" r="1"></circle>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                                        <span style="background: rgba(239, 68, 68, 0.1); color: #dc2626; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">Security</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">July 8, 2024</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">6 min read</span>
+                                    </div>
+                                    <h3 style="margin-bottom: 0.75rem;">DevSecOps: Integrating Security into CI/CD Pipelines</h3>
+                                    <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Learn how to build security into your development process from the ground up with automated testing, vulnerability scanning, and compliance checks.</p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="width: 2rem; height: 2rem; background: var(--gray-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                                <span style="font-weight: 600; color: var(--gray-600); font-size: 0.75rem;">AS</span>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; font-size: 0.875rem;">Amit Singh</div>
+                                                <div style="font-size: 0.75rem; color: var(--gray-500);">Security Architect</div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-outline" onclick="openInsightModal('devsecops-integration')">
+                                            Read More
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12,5 19,12 12,19"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 3: Kubernetes Best Practices -->
+                        <div class="card insight-card" style="padding: 2rem;" data-category="devops" data-date="2024-06-28">
+                            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <div style="width: 5rem; height: 5rem; background: rgba(168, 85, 247, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                                        <span style="background: rgba(168, 85, 247, 0.1); color: #7c3aed; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">DevOps</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">June 28, 2024</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">10 min read</span>
+                                    </div>
+                                    <h3 style="margin-bottom: 0.75rem;">Kubernetes Production Best Practices</h3>
+                                    <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">Essential practices for running Kubernetes in production environments, including resource management, monitoring, and disaster recovery strategies.</p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="width: 2rem; height: 2rem; background: var(--gray-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                                <span style="font-weight: 600; color: var(--gray-600); font-size: 0.75rem;">PG</span>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; font-size: 0.875rem;">Priya Gupta</div>
+                                                <div style="font-size: 0.75rem; color: var(--gray-500);">DevOps Engineer</div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-outline" onclick="openInsightModal('kubernetes-best-practices')">
+                                            Read More
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12,5 19,12 12,19"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 4: Digital Transformation -->
+                        <div class="card insight-card" style="padding: 2rem;" data-category="digital" data-date="2024-06-15">
+                            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <div style="width: 5rem; height: 5rem; background: rgba(59, 130, 246, 0.1); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                                        <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">Digital Transformation</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">June 15, 2024</span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500);">7 min read</span>
+                                    </div>
+                                    <h3 style="margin-bottom: 0.75rem;">Digital Transformation Roadmap for Enterprises</h3>
+                                    <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">A comprehensive guide to planning and executing digital transformation initiatives that deliver measurable business value and competitive advantage.</p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="width: 2rem; height: 2rem; background: var(--gray-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                                <span style="font-weight: 600; color: var(--gray-600); font-size: 0.75rem;">SK</span>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight: 600; font-size: 0.875rem;">Suresh Kumar</div>
+                                                <div style="font-size: 0.75rem; color: var(--gray-500);">Solution Architect</div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-outline" onclick="openInsightModal('digital-transformation-roadmap')">
+                                            Read More
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12,5 19,12 12,19"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div style="text-center; margin-top: 3rem;" id="load-more-insights">
+                    <button class="btn btn-outline btn-lg" onclick="loadMoreInsights()">
+                        Load More Articles
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14"></path>
+                            <path d="M5 12h14"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <section class="py-16" style="background: var(--gray-50); border-radius: 1rem; margin-top: 4rem;">
+                    <div class="container">
+                        <div class="text-center mb-8">
+                            <h2 class="mb-4">Stay Updated with Our Insights</h2>
+                            <p style="font-size: 1.125rem; color: var(--gray-600); max-width: 32rem; margin: 0 auto;">Get the latest technology insights and best practices delivered to your inbox.</p>
+                        </div>
+                        
+                        <form id="newsletter-form" style="max-width: 400px; margin: 0 auto;">
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 0.75rem 1rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 1rem;">
+                                <button type="submit" class="btn btn-primary">
+                                    Subscribe
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p style="font-size: 0.875rem; color: var(--gray-500); text-align: center; margin-top: 1rem;">No spam. Unsubscribe at any time.</p>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Insight Modal -->
+    <div id="insight-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 10000; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="background: white; border-radius: 1rem; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative;">
+                        <div style="position: sticky; top: 0; background: white; border-bottom: 1px solid var(--gray-200); padding: 1.5rem; border-radius: 1rem 1rem 0 0; z-index: 1;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2 style="margin: 0;" id="modal-insight-title">Article Title</h2>
+                    <button onclick="closeInsightModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-500); padding: 0.5rem;">&times;</button>
+                </div>
+            </div>
+            
+            <div style="padding: 2rem;" id="modal-insight-content">
+                <!-- Content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div style="grid-column: span 2;">
+                    <div style="display: inline-block;">
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; background: linear-gradient(to right, white, var(--gray-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Spintatech
+                        </div>
+                    </div>
+                    <p style="color: var(--gray-400); margin-bottom: 1.5rem; max-width: 28rem; line-height: 1.6;" data-translate="footer.description">Transforming businesses through innovative technology solutions and deep industry expertise.</p>
+                    <div style="color: var(--accent); font-weight: 600; font-size: 1.125rem;" data-translate="footer.tagline">Engineering Digital Excellence</div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 data-translate="footer.quick_links">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h3 data-translate="footer.services_links">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#cloud-devops">Cloud & DevOps</a></li>
+                        <li><a href="services.html#data-ai">Data & AI</a></li>
+                        <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-800);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <a href="mailto:contact@spintatech.com" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%; transition: background 0.3s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <span>contact@spintatech.com</span>
+                    </a>
+                    <a href="tel:+912012345678" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <span>+91 20 1234 5678</span>
+                    </a>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300);">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <span>Pune, Maharashtra, India</span>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div style="text-align: center; color: var(--gray-500); font-size: 0.875rem; padding-top: 1rem; border-top: 1px solid rgba(55, 65, 81, 0.5);" data-translate="footer.copyright">
+                    © 2024 Spintatech Services. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()" id="chat-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-weight: bold; font-size: 1.125rem;">Spintatech Assistant</span>
+                    <span style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 0.25rem; background: var(--accent); color: var(--primary); font-size: 0.75rem; font-weight: 600;">Menu</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.25rem;">
+                    <button onclick="changeChatLanguage('en')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-en" class="active">EN</button>
+                    <button onclick="changeChatLanguage('hi')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-hi">HI</button>
+                    <button onclick="toggleChat()" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div style="margin-bottom: 2rem; font-size: 1rem; font-weight: 500; text-align: center;" id="chat-message">
+                    Hello! I'm here to help you learn about Spintatech Services. How can I assist you today?
+                </div>
+                <div class="chat-options" id="chat-options">
+                    <button class="chat-option" onclick="handleChatOption('services')">
+                        🔧 Learn about our services
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('industries')">
+                        🏢 Industries we serve
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('contact')">
+                        📞 Get in touch
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('about')">
+                        ℹ️ About Spintatech
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/translations.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Insights specific JavaScript -->
+    <script>
+        // Insights data
+        const insightsData = {
+            'cloud-migration-best-practices': {
+                title: 'Cloud Migration Best Practices: A Complete Guide',
+                author: 'Spintatech Team',
+                role: 'Cloud Architects',
+                date: '2024-08-01',
+                readTime: '5 min read',
+                category: 'cloud',
+                summary: 'Learn how to migrate your enterprise workloads to the cloud efficiently and securely.',
+                content: `
+                    <h3>Introduction</h3>
+                    <p>Cloud migration has become a critical initiative for organizations looking to modernize their infrastructure, reduce costs, and improve scalability. However, successful cloud migration requires careful planning and execution.</p>
+                    
+                    <h3>Key Migration Strategies</h3>
+                    <p>There are several approaches to cloud migration, each with its own benefits and considerations:</p>
+                    <ul>
+                        <li><strong>Rehosting (Lift and Shift):</strong> Moving applications to the cloud with minimal changes</li>
+                        <li><strong>Replatforming:</strong> Making minor optimizations to take advantage of cloud capabilities</li>
+                        <li><strong>Refactoring:</strong> Redesigning applications to be cloud-native</li>
+                        <li><strong>Repurchasing:</strong> Moving to a different product, typically SaaS</li>
+                    </ul>
+                    
+                    <h3>Best Practices</h3>
+                    <p>Follow these proven practices for successful cloud migration:</p>
+                    <ol>
+                        <li>Conduct thorough assessment and planning</li>
+                        <li>Start with non-critical applications</li>
+                        <li>Implement proper security measures</li>
+                        <li>Plan for data migration carefully</li>
+                        <li>Train your team on cloud technologies</li>
+                        <li>Monitor and optimize continuously</li>
+                    </ol>
+                    
+                    <h3>Common Challenges and Solutions</h3>
+                    <p>Organizations often face several challenges during cloud migration. Here's how to address them:</p>
+                    <ul>
+                        <li><strong>Security Concerns:</strong> Implement zero-trust architecture and encryption</li>
+                        <li><strong>Downtime:</strong> Use blue-green deployment strategies</li>
+                        <li><strong>Cost Management:</strong> Implement proper monitoring and governance</li>
+                        <li><strong>Skills Gap:</strong> Invest in training and consider managed services</li>
+                    </ul>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Cloud migration is a journey that requires careful planning, execution, and ongoing optimization. By following these best practices and learning from common challenges, organizations can successfully modernize their infrastructure and unlock the full potential of cloud computing.</p>
+                `,
+                tags: ['Cloud Migration', 'AWS', 'Azure', 'Best Practices', 'Infrastructure']
+            },
+            'ai-in-enterprise': {
+                title: 'AI in Enterprise: Real-World Use Cases',
+                author: 'Raj Kumar',
+                role: 'AI/ML Engineer',
+                date: '2024-07-15',
+                readTime: '8 min read',
+                category: 'ai',
+                summary: 'Explore how AI and machine learning are transforming business operations across different industries.',
+                content: `
+                    <h3>The AI Revolution in Enterprise</h3>
+                    <p>Artificial Intelligence is no longer a futuristic concept—it's a present reality transforming how businesses operate, make decisions, and serve customers. From automating routine tasks to providing deep insights from data, AI is becoming an essential tool for competitive advantage.</p>
+                    
+                    <h3>Key Use Cases Across Industries</h3>
+                    
+                    <h4>1. Customer Service Automation</h4>
+                    <p>AI-powered chatbots and virtual assistants are revolutionizing customer service by providing 24/7 support, handling routine inquiries, and escalating complex issues to human agents when necessary.</p>
+                    
+                    <h4>2. Predictive Analytics</h4>
+                    <p>Organizations are using machine learning algorithms to predict customer behavior, market trends, and equipment failures, enabling proactive decision-making and risk mitigation.</p>
+                    
+                    <h4>3. Process Automation</h4>
+                    <p>Robotic Process Automation (RPA) combined with AI is streamlining repetitive tasks, reducing errors, and freeing up human resources for more strategic work.</p>
+                    
+                    <h4>4. Fraud Detection</h4>
+                                        <p>Financial institutions are leveraging AI to detect fraudulent transactions in real-time, analyzing patterns and anomalies that would be impossible for humans to identify at scale.</p>
+                    
+                    <h3>Implementation Strategies</h3>
+                    <p>Successfully implementing AI in enterprise requires a strategic approach:</p>
+                    <ol>
+                        <li>Start with a clear business case and measurable objectives</li>
+                        <li>Ensure data quality and accessibility</li>
+                        <li>Build or acquire the right talent</li>
+                        <li>Choose the right AI technologies and platforms</li>
+                        <li>Implement proper governance and ethics guidelines</li>
+                        <li>Scale gradually from pilot projects to enterprise-wide deployment</li>
+                    </ol>
+                    
+                    <h3>ROI and Business Impact</h3>
+                    <p>Organizations implementing AI are seeing significant returns:</p>
+                    <ul>
+                        <li>30-40% reduction in operational costs</li>
+                        <li>50% improvement in customer satisfaction scores</li>
+                        <li>25% increase in revenue through personalization</li>
+                        <li>60% reduction in time-to-market for new products</li>
+                    </ul>
+                    
+                    <h3>Looking Ahead</h3>
+                    <p>As AI technology continues to evolve, we can expect even more transformative applications, including advanced natural language processing, computer vision, and autonomous decision-making systems that will further revolutionize how businesses operate.</p>
+                `,
+                tags: ['AI', 'Machine Learning', 'Enterprise', 'Digital Transformation', 'Automation']
+            },
+            'devsecops-integration': {
+                title: 'DevSecOps: Integrating Security into CI/CD Pipelines',
+                author: 'Amit Singh',
+                role: 'Security Architect',
+                date: '2024-07-08',
+                readTime: '6 min read',
+                category: 'security',
+                summary: 'Learn how to build security into your development process from the ground up.',
+                content: `
+                    <h3>The Shift to DevSecOps</h3>
+                    <p>Traditional security practices that treat security as a final checkpoint are no longer sufficient in today's fast-paced development environment. DevSecOps integrates security practices throughout the entire software development lifecycle.</p>
+                    
+                    <h3>Core Principles of DevSecOps</h3>
+                    <ul>
+                        <li><strong>Shift Left:</strong> Move security testing earlier in the development process</li>
+                        <li><strong>Automation:</strong> Automate security testing and compliance checks</li>
+                        <li><strong>Collaboration:</strong> Foster collaboration between development, security, and operations teams</li>
+                        <li><strong>Continuous Monitoring:</strong> Implement real-time security monitoring and alerting</li>
+                    </ul>
+                    
+                    <h3>Implementation Strategies</h3>
+                    <p>Here's how to successfully integrate security into your CI/CD pipeline:</p>
+                    
+                    <h4>1. Static Application Security Testing (SAST)</h4>
+                    <p>Integrate SAST tools into your IDE and CI pipeline to identify vulnerabilities in source code before deployment.</p>
+                    
+                    <h4>2. Dynamic Application Security Testing (DAST)</h4>
+                    <p>Implement DAST tools to test running applications for vulnerabilities that only appear during execution.</p>
+                    
+                    <h4>3. Software Composition Analysis (SCA)</h4>
+                    <p>Scan third-party libraries and dependencies for known vulnerabilities and license compliance issues.</p>
+                    
+                    <h4>4. Container Security</h4>
+                    <p>Scan container images for vulnerabilities and implement runtime protection for containerized applications.</p>
+                    
+                    <h3>Tools and Technologies</h3>
+                    <p>Essential tools for DevSecOps implementation:</p>
+                    <ul>
+                        <li>SAST: SonarQube, Checkmarx, Fortify</li>
+                        <li>DAST: OWASP ZAP, Burp Suite, Acunetix</li>
+                        <li>SCA: WhiteSource, Black Duck, Snyk</li>
+                        <li>Container Security: Twistlock, Aqua Security, Sysdig</li>
+                    </ul>
+                    
+                    <h3>Measuring Success</h3>
+                    <p>Key metrics to track your DevSecOps maturity:</p>
+                    <ul>
+                        <li>Mean time to detect (MTTD) vulnerabilities</li>
+                        <li>Mean time to remediate (MTTR) security issues</li>
+                        <li>Percentage of automated security tests</li>
+                        <li>Number of security incidents in production</li>
+                        <li>Developer security training completion rates</li>
+                    </ul>
+                `,
+                tags: ['DevSecOps', 'Security', 'CI/CD', 'Automation', 'Best Practices']
+            },
+            'kubernetes-best-practices': {
+                title: 'Kubernetes Production Best Practices',
+                author: 'Priya Gupta',
+                role: 'DevOps Engineer',
+                date: '2024-06-28',
+                readTime: '10 min read',
+                category: 'devops',
+                summary: 'Essential practices for running Kubernetes in production environments.',
+                content: `
+                    <h3>Production-Ready Kubernetes</h3>
+                    <p>Running Kubernetes in production requires careful planning, proper configuration, and ongoing management. This guide covers essential best practices for maintaining reliable, secure, and scalable Kubernetes clusters.</p>
+                    
+                    <h3>Cluster Architecture and Design</h3>
+                    <ul>
+                        <li><strong>Multi-master Setup:</strong> Deploy at least 3 master nodes for high availability</li>
+                        <li><strong>Node Pools:</strong> Use different node pools for different workload types</li>
+                        <li><strong>Network Policies:</strong> Implement network segmentation and micro-segmentation</li>
+                        <li><strong>Storage Classes:</strong> Define appropriate storage classes for different data requirements</li>
+                    </ul>
+                    
+                    <h3>Resource Management</h3>
+                    <p>Proper resource management is crucial for cluster stability:</p>
+                    <ul>
+                        <li>Always set resource requests and limits</li>
+                        <li>Use horizontal pod autoscaling for dynamic workloads</li>
+                        <li>Implement cluster autoscaling for node management</li>
+                        <li>Configure pod disruption budgets for availability</li>
+                        <li>Use namespaces for resource isolation and quotas</li>
+                    </ul>
+                    
+                    <h3>Security Best Practices</h3>
+                    <ol>
+                        <li>Enable RBAC and follow the principle of least privilege</li>
+                        <li>Use Pod Security Policies or Pod Security Standards</li>
+                        <li>Scan container images for vulnerabilities</li>
+                        <li>Implement network policies for traffic control</li>
+                        <li>Rotate secrets and certificates regularly</li>
+                        <li>Enable audit logging and monitoring</li>
+                    </ol>
+                    
+                    <h3>Monitoring and Observability</h3>
+                    <p>Comprehensive monitoring is essential for production Kubernetes:</p>
+                    <ul>
+                        <li><strong>Metrics:</strong> Prometheus for metrics collection and alerting</li>
+                        <li><strong>Logging:</strong> ELK stack or Fluentd for centralized logging</li>
+                        <li><strong>Tracing:</strong> Jaeger or Zipkin for distributed tracing</li>
+                        <li><strong>Dashboards:</strong> Grafana for visualization</li>
+                    </ul>
+                    
+                    <h3>Disaster Recovery</h3>
+                    <p>Prepare for the worst with proper disaster recovery planning:</p>
+                    <ul>
+                        <li>Regular backup of etcd data</li>
+                        <li>Multi-region deployments for critical applications</li>
+                        <li>Documented recovery procedures</li>
+                        <li>Regular disaster recovery drills</li>
+                        <li>GitOps for infrastructure as code</li>
+                    </ul>
+                `,
+                tags: ['Kubernetes', 'DevOps', 'Production', 'Best Practices', 'Container Orchestration']
+            },
+            'digital-transformation-roadmap': {
+                title: 'Digital Transformation Roadmap for Enterprises',
+                author: 'Suresh Kumar',
+                role: 'Solution Architect',
+                date: '2024-06-15',
+                readTime: '7 min read',
+                category: 'digital',
+                summary: 'A comprehensive guide to planning and executing digital transformation initiatives.',
+                content: `
+                    <h3>Understanding Digital Transformation</h3>
+                    <p>Digital transformation is not just about technology—it's about reimagining business models, processes, and customer experiences in the digital age. Success requires a clear vision, strong leadership, and a strategic roadmap.</p>
+                    
+                    <h3>The Digital Transformation Framework</h3>
+                    
+                    <h4>Phase 1: Assessment and Vision (Months 1-3)</h4>
+                    <ul>
+                        <li>Evaluate current digital maturity</li>
+                        <li>Define transformation goals and KPIs</li>
+                        <li>Identify gaps and opportunities</li>
+                        <li>Build executive sponsorship</li>
+                    </ul>
+                    
+                    <h4>Phase 2: Strategy and Planning (Months 4-6)</h4>
+                    <ul>
+                        <li>Develop digital strategy aligned with business objectives</li>
+                        <li>Create technology roadmap</li>
+                        <li>Define governance structure</li>
+                        <li>Establish change management framework</li>
+                    </ul>
+                    
+                    <h4>Phase 3: Pilot and Learn (Months 7-12)</h4>
+                    <ul>
+                        <li>Launch pilot projects in selected areas</li>
+                        <li>Measure results and gather feedback</li>
+                        <li>Refine approach based on learnings</li>
+                        <li>Build internal capabilities</li>
+                    </ul>
+                    
+                    <h4>Phase 4: Scale and Optimize (Months 13-24)</h4>
+                    <ul>
+                        <li>Roll out successful initiatives enterprise-wide</li>
+                        <li>Integrate new technologies with existing systems</li>
+                        <li>Continuously optimize based on data</li>
+                        <li>Foster innovation culture</li>
+                    </ul>
+                    
+                    <h3>Key Success Factors</h3>
+                    <ol>
+                        <li><strong>Leadership Commitment:</strong> Active sponsorship from C-suite</li>
+                        <li><strong>Customer Focus:</strong> Design around customer needs and experiences</li>
+                        <li><strong>Data-Driven Decisions:</strong> Use analytics to guide strategy</li>
+                        <li><strong>Agile Approach:</strong> Embrace iterative development and continuous improvement</li>
+                        <li><strong>Cultural Change:</strong> Foster digital-first mindset across the organization</li>
+                    </ol>
+                    
+                    <h3>Common Pitfalls to Avoid</h3>
+                    <ul>
+                        <li>Treating digital transformation as an IT project</li>
+                        <li>Underestimating change management requirements</li>
+                        <li>Lack of clear metrics and accountability</li>
+                        <li>Insufficient investment in skills development</li>
+                        <li>Ignoring cybersecurity and compliance</li>
+                    </ul>
+                    
+                    <h3>Measuring Success</h3>
+                    <p>Track these metrics to measure transformation progress:</p>
+                    <ul>
+                        <li>Revenue from digital channels</li>
+                        <li>Customer satisfaction and NPS scores</li>
+                        <li>Process efficiency improvements</li>
+                        <li>Time to market for new products/services</li>
+                        <li>Employee digital skills development</li>
+                        <li>Innovation pipeline strength</li>
+                    </ul>
+                `,
+                tags: ['Digital Transformation', 'Strategy', 'Enterprise', 'Innovation', 'Change Management']
+            }
+        };
+
+        // Additional insights for load more
+        const additionalInsights = [
+            {
+                id: 'microservices-architecture',
+                title: 'Microservices Architecture: Design Patterns and Anti-Patterns',
+                author: 'Vikram Sharma',
+                role: 'System Architect',
+                date: '2024-06-01',
+                readTime: '9 min read',
+                category: 'cloud',
+                summary: 'Deep dive into microservices design patterns, best practices, and common pitfalls to avoid.',
+                tags: ['Microservices', 'Architecture', 'Design Patterns']
+            },
+            {
+                id: 'zero-trust-security',
+                title: 'Implementing Zero Trust Security Model',
+                author: 'Neha Patel',
+                role: 'Security Engineer',
+                date: '2024-05-20',
+                readTime: '7 min read',
+                category: 'security',
+                summary: 'A practical guide to implementing zero trust architecture in modern enterprises.',
+                tags: ['Security', 'Zero Trust', 'Architecture']
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFilters();
+            initializeSearch();
+            initializeNewsletter();
+            animateInsightCards();
+        });
+
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.background = '';
+                        btn.style.color = '';
+                    });
+                    
+                    this.classList.add('active');
+                    this.style.background = 'var(--primary)';
+                    this.style.color = 'white';
+                    
+                    // Filter insights
+                    filterInsights(category);
+                    
+                    // Track filter usage
+                    trackEvent('insights_filtered', {
+                        category: category,
+                        visible_count: document.querySelectorAll('.insight-card[style*="display: block"]').length
+                    });
+                });
+            });
+        }
+
+        function filterInsights(category) {
+            const insightCards = document.querySelectorAll('.insight-card');
+            
+            insightCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        function initializeSearch() {
+            const searchInput = document.getElementById('insights-search');
+            
+            searchInput?.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    searchInsights();
+                }
+            });
+        }
+
+        function searchInsights() {
+            const searchInput = document.getElementById('insights-search');
+            const query = searchInput?.value.toLowerCase() || '';
+            
+            if (!query) {
+                filterInsights('all');
+                return;
+            }
+            
+            const insightCards = document.querySelectorAll('.insight-card');
+            
+            insightCards.forEach(card => {
+                const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+                const description = card.querySelector('p')?.textContent.toLowerCase() || '';
+                const author = card.querySelector('[style*="font-weight: 600"]')?.textContent.toLowerCase() || '';
+                
+                const isMatch = title.includes(query) || 
+                               description.includes(query) || 
+                               author.includes(query);
+                
+                if (isMatch) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    highlightSearchTerm(card, query);
+                } else {
+                    card.style.opacity = '0.3';
+                }
+            });
+            
+            trackEvent('insights_searched', {
+                query: query,
+                results_count: document.querySelectorAll('.insight-card[style*="opacity: 1"]').length
+            });
+        }
+
+        function highlightSearchTerm(element, term) {
+            const textElements = element.querySelectorAll('h3, p');
+            textElements.forEach(el => {
+                const text = el.textContent;
+                const regex = new RegExp(`(${term})`, 'gi');
+                const highlightedText = text.replace(regex, '<mark style="background: yellow; padding: 0.1rem;">$1</mark>');
+                
+                if (highlightedText !== text) {
+                    el.innerHTML = highlightedText;
+                }
+            });
+        }
+
+        function initializeNewsletter() {
+            const newsletterForm = document.getElementById('newsletter-form');
+            
+            newsletterForm?.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('input[name="email"]').value;
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalHTML = submitBtn.innerHTML;
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                    <div class="spinner"></div>
+                    <span>Subscribing...</span>
+                `;
+                
+                try {
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Store subscription
+                    const subscriptions = JSON.parse(localStorage.getItem('newsletter_subscriptions') || '[]');
+                    subscriptions.push({
+                        email: email,
+                        subscribed_at: new Date().toISOString()
+                    });
+                    localStorage.setItem('newsletter_subscriptions', JSON.stringify(subscriptions));
+                    
+                    // Show success
+                    showAlert('Successfully subscribed to newsletter!', 'success');
+                    this.reset();
+                    
+                    // Track subscription
+                    trackEvent('newsletter_subscribed', {
+                        email: email
+                    });
+                    
+                } catch (error) {
+                    showAlert('Error subscribing to newsletter. Please try again.', 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHTML;
+                }
+            });
+        }
+
+        function animateInsightCards() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 200);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            const insightCards = document.querySelectorAll('.insight-card');
+            insightCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(card);
+            });
+        }
+
+        function openInsightModal(insightId) {
+            const insight = insightsData[insightId];
+            if (!insight) return;
+            
+            const modal = document.getElementById('insight-modal');
+            const titleElement = document.getElementById('modal-insight-title');
+            const contentElement = document.getElementById('modal-insight-content');
+            
+            titleElement.textContent = insight.title;
+            
+            contentElement.innerHTML = `
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 3rem; height: 3rem; background: var(--gray-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="font-weight: 600; color: var(--gray-600);">${insight.author.split(' ').map(n => n[0]).join('')}</span>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600;">${insight.author}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-500);">${insight.role}</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="font-size: 0.875rem; color: var(--gray-500);">${insight.date}</span>
+                            <span style="font-size: 0.875rem; color: var(--gray-500);">${insight.readTime}</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <em style="color: var(--gray-600);">${insight.summary}</em>
+                    </div>
+                </div>
+                
+                <div style="line-height: 1.8; color: var(--gray-700);">
+                    ${insight.content}
+                </div>
+                
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-200);">
+                    <h4 style="margin-bottom: 1rem;">Tags:</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        ${insight.tags.map(tag => `
+                            <span style="background: var(--gray-100); color: var(--gray-700); padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.875rem;">${tag}</span>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-200);">
+                    <button class="btn btn-primary" onclick="shareInsight('${insightId}')">
+                        Share Article
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline" onclick="downloadInsight('${insightId}')">
+                        Download PDF
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </button>
+                </div>
+            `;
+            
+            modal.style.display = 'flex';
+            
+            // Track modal open
+            trackEvent('insight_viewed', {
+                insight_id: insightId,
+                insight_title: insight.title,
+                category: insight.category
+            });
+        }
+
+        function closeInsightModal() {
+            const modal = document.getElementById('insight-modal');
+            modal.style.display = 'none';
+        }
+
+        function shareInsight(insightId) {
+            const insight = insightsData[insightId];
+            if (!insight) return;
+            
+            const shareData = {
+                title: insight.title,
+                text: insight.summary,
+                url: window.location.href + '#' + insightId
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData).then(() => {
+                    trackEvent('insight_shared', {
+                        insight_id: insightId,
+                        method: 'native'
+                    });
+                });
+            } else {
+                navigator.clipboard.writeText(shareData.url).then(() => {
+                    showAlert('Article link copied to clipboard!', 'success');
+                    trackEvent('insight_shared', {
+                        insight_id: insightId,
+                        method: 'clipboard'
+                    });
+                });
+            }
+        }
+
+        function downloadInsight(insightId) {
+            const insight = insightsData[insightId];
+            if (!insight) return;
+            
+            // Track download
+            trackEvent('insight_downloaded', {
+                insight_id: insightId,
+                insight_title: insight.title,
+                format: 'pdf'
+            });
+            
+            // Show download notification
+            showAlert('Article download started. Check your downloads folder.', 'success');
+            
+            // In production, this would trigger an actual PDF download
+            setTimeout(() => {
+                showAlert('This is a demo. In production, a PDF would be downloaded.', 'info');
+            }, 2000);
+        }
+
+        function loadMoreInsights() {
+            const container = document.getElementById('insights-container');
+            const loadMoreBtn = document.getElementById('load-more-insights');
+            
+            // Add additional insights
+            additionalInsights.forEach((insight, index) => {
+                const insightHTML = createInsightHTML(insight);
+                container.insertAdjacentHTML('beforeend', insightHTML);
+                
+                // Animate new cards
+                const newCard = container.lastElementChild;
+                newCard.style.opacity = '0';
+                newCard.style.transform = 'translateY(30px)';
+                newCard.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                
+                setTimeout(() => {
+                    newCard.style.opacity = '1';
+                    newCard.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+            
+            // Hide load more button
+            loadMoreBtn.style.display = 'none';
+            
+            // Track load more action
+            trackEvent('insights_load_more', {
+                additional_count: additionalInsights.length
+            });
+        }
+
+        function createInsightHTML(insight) {
+            const categoryColors = {
+                cloud: { bg: 'rgba(30, 58, 138, 0.1)', color: 'var(--primary)' },
+                ai: { bg: 'rgba(34, 197, 94, 0.1)', color: '#16a34a' },
+                security: { bg: 'rgba(239, 68, 68, 0.1)', color: '#dc2626' },
+                devops: { bg: 'rgba(168, 85, 247, 0.1)', color: '#7c3aed' },
+                digital: { bg: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6' }
+            };
+            
+            const colors = categoryColors[insight.category] || categoryColors.cloud;
+            
+            return `
+                <div class="card insight-card" style="padding: 2rem;" data-category="${insight.category}" data-date="${insight.date}">
+                    <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                        <div style="width: 5rem; height: 5rem; background: ${colors.bg}; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${colors.color}" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                                <span style="background: ${colors.bg}; color: ${colors.color}; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; text-transform: capitalize;">${insight.category}</span>
+                                <span style="font-size: 0.875rem; color: var(--gray-500);">${insight.date}</span>
+                                <span style="font-size: 0.875rem; color: var(--gray-500);">${insight.readTime}</span>
+                            </div>
+                            <h3 style="margin-bottom: 0.75rem;">${insight.title}</h3>
+                            <p style="color: var(--gray-600); margin-bottom: 1rem; line-height: 1.6;">${insight.summary}</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div style="width: 2rem; height: 2rem; background: var(--gray-200); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <span style="font-weight: 600; color: var(--gray-600); font-size: 0.75rem;">${insight.author.split(' ').map(n => n[0]).join('')}</span>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 0.875rem;">${insight.author}</div>
+                                        <div style="font-size: 0.75rem; color: var(--gray-500);">${insight.role}</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline" onclick="openInsightModal('${insight.id}')">
+                                    Read More
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('insight-modal');
+            if (e.target === modal) {
+                closeInsightModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('insight-modal');
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeInsightModal();
+            }
+        });
+    </script>
+</body>
+</html>

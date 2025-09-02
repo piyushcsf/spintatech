@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "public": true,
+  "rewrites": [
+    { "source": "/about", "destination": "/pages/about.html" },
+    { "source": "/services", "destination": "/pages/services.html" },
+    { "source": "/industries", "destination": "/pages/industries.html" },
+    { "source": "/case-studies", "destination": "/pages/case-studies.html" },
+    { "source": "/careers", "destination": "/pages/careers.html" },
+    { "source": "/insights", "destination": "/pages/insights.html" },
+    { "source": "/contact", "destination": "/pages/contact.html" }
+  ]
+}

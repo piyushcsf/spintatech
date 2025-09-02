@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://spintatech.com/sitemap.xml

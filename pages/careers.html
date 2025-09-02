@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Spintatech | Join Our Team</title>
+    <meta name="description" content="Join Spintatech's team of technology experts. Explore open positions in software development, cloud engineering, and digital transformation.">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Spintatech</a>
+                
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="industries.html" class="nav-link">Industries</a></li>
+                        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="careers.html" class="nav-link active">Careers</a></li>
+                        <li><a href="insights.html" class="nav-link">Insights</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <div class="language-option active" onclick="changeLanguage('en')">
+                                <span>🇺🇸</span>
+                                <div>
+                                    <div>English</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">English</div>
+                                </div>
+                                <span style="margin-left: auto;">✓</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('hi')">
+                                <span>🇮🇳</span>
+                                <div>
+                                    <div>हिंदी</div>
+                                    <div style="font-size: 0.75rem; color: var(--gray-500);">Hindi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div style="padding: 1rem;">
+                <div style="margin-bottom: 1rem; padding: 1rem; background: var(--gray-50); border-radius: 0.5rem;">
+                    <div class="language-switcher">
+                        <button class="language-btn" onclick="toggleLanguageDropdown()">
+                            <span>🌐</span>
+                            <span id="mobile-current-lang">English</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="../index.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Home</a>
+                <a href="services.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Services</a>
+                <a href="industries.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Industries</a>
+                <a href="case-studies.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Case Studies</a>
+                <a href="about.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">About</a>
+                <a href="careers.html" class="nav-link active" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Careers</a>
+                <a href="insights.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Insights</a>
+                <a href="contact.html" class="nav-link" style="display: block; padding: 0.75rem; margin: 0.25rem 0;">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="py-20">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <h1 class="mb-4">Careers</h1>
+                    <p style="font-size: 1.25rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;">Join Spintatech's team of technology experts. See open positions and apply today.</p>
+                </div>
+
+                <!-- Job Listings -->
+                <div style="max-width: 4xl; margin: 0 auto;">
+                    <div style="margin-bottom: 4rem;">
+                        <!-- Job 1: Frontend Developer -->
+                        <div class="card" style="margin-bottom: 2rem; padding: 2rem;" id="frontend-dev">
+                            <div style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <div style="flex: 1; min-width: 250px;">
+                                    <h2 style="margin-bottom: 0.5rem; color: var(--gray-800);">Frontend Developer (React)</h2>
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                                        <span style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.25rem;">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                <circle cx="12" cy="10" r="3"></circle>
+                                            </svg>
+                                            Remote / Pune
+                                        </span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.25rem;">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12,6 12,12 16,14"></polyline>
+                                            </svg>
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="applyForJob('frontend-dev', 'Frontend Developer (React)')">
+                                    Apply Now
+                                </button>
+                            </div>
+                            
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem;">Build modern, scalable UIs using React, TypeScript, and Tailwind CSS.</p>
+                            
+                            <!-- Job Details -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                                <div>
+                                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Requirements:</h3>
+                                    <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            3+ years React experience
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            TypeScript proficiency
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Modern CSS frameworks
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Git & CI/CD knowledge
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Benefits:</h3>
+                                    <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Competitive salary
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Remote work options
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Learning & development
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Health insurance
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 2: Backend Developer -->
+                        <div class="card" style="margin-bottom: 2rem; padding: 2rem;" id="backend-dev">
+                            <div style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <div style="flex: 1; min-width: 250px;">
+                                    <h2 style="margin-bottom: 0.5rem; color: var(--gray-800);">Backend Developer (Node.js)</h2>
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                                        <span style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.25rem;">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                <circle cx="12" cy="10" r="3"></circle>
+                                            </svg>
+                                            Remote / Pune
+                                        </span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.25rem;">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12,6 12,12 16,14"></polyline>
+                                            </svg>
+                                                                                        Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="applyForJob('backend-dev', 'Backend Developer (Node.js)')">
+                                    Apply Now
+                                </button>
+                            </div>
+                            
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem;">Develop robust APIs and microservices using Node.js, Express, and MongoDB.</p>
+                            
+                            <!-- Job Details -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                                <div>
+                                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Requirements:</h3>
+                                    <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            4+ years Node.js experience
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Database design (MongoDB/SQL)
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            RESTful API development
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Cloud platforms (AWS/Azure)
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Benefits:</h3>
+                                    <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Competitive salary
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Flexible working hours
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Professional growth
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Team building events
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 3: DevOps Engineer -->
+                        <div class="card" style="margin-bottom: 2rem; padding: 2rem;" id="devops-engineer">
+                            <div style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <div style="flex: 1; min-width: 250px;">
+                                    <h2 style="margin-bottom: 0.5rem; color: var(--gray-800);">DevOps Engineer</h2>
+                                    <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                                        <span style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.25rem;">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                <circle cx="12" cy="10" r="3"></circle>
+                                            </svg>
+                                            Remote / Pune
+                                        </span>
+                                        <span style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.25rem;">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12,6 12,12 16,14"></polyline>
+                                            </svg>
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="applyForJob('devops-engineer', 'DevOps Engineer')">
+                                    Apply Now
+                                </button>
+                            </div>
+                            
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem;">Build and maintain CI/CD pipelines, manage cloud infrastructure, and ensure system reliability.</p>
+                            
+                            <!-- Job Details -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                                <div>
+                                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Requirements:</h3>
+                                    <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            3+ years DevOps experience
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Kubernetes & Docker
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Infrastructure as Code
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Monitoring & logging tools
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-800);">Benefits:</h3>
+                                    <ul style="list-style: none; padding: 0; color: var(--gray-600);">
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Competitive salary
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Latest tech stack
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Conference attendance
+                                        </li>
+                                        <li style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin-right: 0.5rem;">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            Work-life balance
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Culture Section -->
+                <section class="py-16" style="background: var(--gray-50); border-radius: 1rem; margin-top: 4rem;">
+                    <div class="container">
+                        <div class="text-center mb-12">
+                            <h2 class="mb-4">Why Work at Spintatech?</h2>
+                            <p style="font-size: 1.125rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;">Join a team that values innovation, growth, and work-life balance</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            <!-- Innovation -->
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Innovation First</h3>
+                                <p style="color: var(--gray-600);">Work with cutting-edge technologies and contribute to innovative solutions that make a real impact.</p>
+                            </div>
+
+                            <!-- Growth -->
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="20" x2="12" y2="10"></line>
+                                        <line x1="18" y1="20" x2="18" y2="4"></line>
+                                        <line x1="6" y1="20" x2="6" y2="16"></line>
+                                    </svg>
+                                </div>
+                                                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Career Growth</h3>
+                                <p style="color: var(--gray-600);">Continuous learning opportunities, mentorship programs, and clear career progression paths.</p>
+                            </div>
+
+                            <!-- Team -->
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Great Team</h3>
+                                <p style="color: var(--gray-600);">Collaborate with talented professionals in a supportive and inclusive environment.</p>
+                            </div>
+
+                            <!-- Flexibility -->
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Work Flexibility</h3>
+                                <p style="color: var(--gray-600);">Remote work options, flexible hours, and a healthy work-life balance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Application Process -->
+                <section class="py-16">
+                    <div class="container">
+                        <div class="text-center mb-12">
+                            <h2 class="mb-4">Our Hiring Process</h2>
+                            <p style="font-size: 1.125rem; color: var(--gray-600); max-width: 48rem; margin: 0 auto;">A transparent and efficient process designed to find the best fit</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                            <!-- Step 1 -->
+                            <div style="text-align: center; padding: 2rem; position: relative;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; position: relative; z-index: 2;">1</div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Application</h3>
+                                <p style="color: var(--gray-600);">Submit your application with resume and cover letter through our online form.</p>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div style="text-align: center; padding: 2rem; position: relative;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; position: relative; z-index: 2;">2</div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Screening</h3>
+                                <p style="color: var(--gray-600);">Initial phone/video call to discuss your background and the role requirements.</p>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div style="text-align: center; padding: 2rem; position: relative;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; position: relative; z-index: 2;">3</div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Technical Interview</h3>
+                                <p style="color: var(--gray-600);">Technical assessment and coding interview with our engineering team.</p>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div style="text-align: center; padding: 2rem; position: relative;">
+                                <div style="width: 4rem; height: 4rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: bold; position: relative; z-index: 2;">4</div>
+                                <h3 style="margin-bottom: 1rem; color: var(--gray-800);">Final Interview</h3>
+                                <p style="color: var(--gray-600);">Meet with team leads and discuss culture fit, career goals, and expectations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Application Modal -->
+    <div id="application-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 10000; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="background: white; border-radius: 1rem; padding: 2rem; max-width: 500px; width: 100%; max-height: 80vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="margin: 0;" id="modal-job-title">Apply for Position</h2>
+                <button onclick="closeApplicationModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-500);">&times;</button>
+            </div>
+            
+            <form id="application-form" data-form-type="career">
+                <div class="form-group">
+                    <label class="form-label">Your Name *</label>
+                    <input type="text" name="name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" name="phone" class="form-input" placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Why are you a good fit? *</label>
+                    <textarea name="message" class="form-textarea" placeholder="Tell us about your experience and why you're interested in this role..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Resume/CV *</label>
+                    <input type="file" name="resume" class="form-input" accept=".pdf,.doc,.docx" required>
+                    <div style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.25rem;">
+                        Accepted formats: PDF, DOC, DOCX (Max 5MB)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Portfolio/LinkedIn URL</label>
+                    <input type="url" name="portfolio" class="form-input" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+
+                <!-- Hidden fields -->
+                <input type="hidden" name="jobId" id="modal-job-id">
+                <input type="hidden" name="jobTitle" id="modal-job-title-hidden">
+
+                <!-- Honeypot field -->
+                <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">
+                        Submit Application
+                    </button>
+                    <button type="button" onclick="closeApplicationModal()" class="btn btn-outline">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div style="grid-column: span 2;">
+                    <div style="display: inline-block;">
+                        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; background: linear-gradient(to right, white, var(--gray-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Spintatech
+                        </div>
+                    </div>
+                    <p style="color: var(--gray-400); margin-bottom: 1.5rem; max-width: 28rem; line-height: 1.6;" data-translate="footer.description">Transforming businesses through innovative technology solutions and deep industry expertise.</p>
+                    <div style="color: var(--accent); font-weight: 600; font-size: 1.125rem;" data-translate="footer.tagline">Engineering Digital Excellence</div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 data-translate="footer.quick_links">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h3 data-translate="footer.services_links">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#cloud-devops">Cloud & DevOps</a></li>
+                        <li><a href="services.html#data-ai">Data & AI</a></li>
+                        <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-800);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <a href="mailto:contact@spintatech.com" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%; transition: background 0.3s ease;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <span>contact@spintatech.com</span>
+                    </a>
+                    <a href="tel:+912012345678" style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300); text-decoration: none; transition: color 0.3s ease;">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <span>+91 20 1234 5678</span>
+                    </a>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--gray-300);">
+                        <div style="padding: 0.5rem; background: var(--gray-800); border-radius: 50%;">
+                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <span>Pune, Maharashtra, India</span>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div style="text-align: center; color: var(--gray-500); font-size: 0.875rem; padding-top: 1rem; border-top: 1px solid rgba(55, 65, 81, 0.5);" data-translate="footer.copyright">
+                    © 2024 Spintatech Services. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()" id="chat-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-weight: bold; font-size: 1.125rem;">Spintatech Assistant</span>
+                    <span style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 0.25rem; background: var(--accent); color: var(--primary); font-size: 0.75rem; font-weight: 600;">Menu</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.25rem;">
+                    <button onclick="changeChatLanguage('en')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-en" class="active">EN</button>
+                    <button onclick="changeChatLanguage('hi')" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;" id="chat-lang-hi">HI</button>
+                    <button onclick="toggleChat()" style="background: transparent; border: none; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div style="margin-bottom: 2rem; font-size: 1rem; font-weight: 500; text-align: center;" id="chat-message">
+                    Hello! I'm here to help you learn about Spintatech Services. How can I assist you today?
+                </div>
+                <div class="chat-options" id="chat-options">
+                    <button class="chat-option" onclick="handleChatOption('services')">
+                        🔧 Learn about our services
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('industries')">
+                        🏢 Industries we serve
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('contact')">
+                        📞 Get in touch
+                    </button>
+                    <button class="chat-option" onclick="handleChatOption('about')">
+                        ℹ️ About Spintatech
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/translations.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Career-specific JavaScript -->
+    <script>
+        // Career page specific functionality
+        let currentJobApplication = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize application form
+            const applicationForm = document.getElementById('application-form');
+            if (applicationForm) {
+                applicationForm.addEventListener('submit', handleApplicationSubmit);
+            }
+
+            // Animate job cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 200);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe job cards
+            const jobCards = document.querySelectorAll('.card');
+            jobCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(card);
+            });
+
+            // Add hover effects to process steps
+            const processSteps = document.querySelectorAll('[style*="font-size: 1.5rem; font-weight: bold"]');
+            processSteps.forEach(step => {
+                const container = step.parentElement;
+                
+                container.addEventListener('mouseenter', function() {
+                    step.style.transform = 'scale(1.1)';
+                    step.style.transition = 'transform 0.3s ease';
+                });
+                
+                container.addEventListener('mouseleave', function() {
+                    step.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+        // Application modal functions
+        function applyForJob(jobId, jobTitle) {
+            currentJobApplication = { jobId, jobTitle };
+            
+            // Update modal content
+            document.getElementById('modal-job-title').textContent = `Apply for ${jobTitle}`;
+            document.getElementById('modal-job-id').value = jobId;
+            document.getElementById('modal-job-title-hidden').value = jobTitle;
+            
+            // Show modal
+            const modal = document.getElementById('application-modal');
+            modal.style.display = 'flex';
+            
+            // Focus on first input
+            setTimeout(() => {
+                const firstInput = modal.querySelector('input[name="name"]');
+                if (firstInput) firstInput.focus();
+            }, 100);
+            
+            // Track application start
+            trackEvent('job_application_started', {
+                job_id: jobId,
+                job_title: jobTitle
+            });
+        }
+
+        function closeApplicationModal() {
+            const modal = document.getElementById('application-modal');
+            modal.style.display = 'none';
+            
+            // Reset form
+            const form = document.getElementById('application-form');
+            form.reset();
+            
+            // Clear any error messages
+            const errorMessages = form.querySelectorAll('.field-error');
+            errorMessages.forEach(error => error.remove());
+            
+            currentJobApplication = null;
+        }
+
+        // Handle application form submission
+        async function handleApplicationSubmit(e) {
+            e.preventDefault();
+            
+            if (!validateApplicationForm()) {
+                return;
+            }
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalHTML = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <div class="spinner"></div>
+                <span>Submitting...</span>
+            `;
+            
+            try {
+                const formData = new FormData(this);
+                
+                // Remove honeypot field
+                formData.delete('website');
+                
+                // Simulate API call (replace with actual endpoint)
+                await simulateApplicationSubmission(formData);
+                
+                // Show success message
+                showApplicationSuccess();
+                closeApplicationModal();
+                
+                // Track successful submission
+                trackEvent('job_application_submitted', {
+                    job_id: currentJobApplication?.jobId,
+                    job_title: currentJobApplication?.jobTitle,
+                    success: true
+                });
+                
+            } catch (error) {
+                console.error('Application submission error:', error);
+                showApplicationError();
+                
+                // Track failed submission
+                trackEvent('job_application_submitted', {
+                    job_id: currentJobApplication?.jobId,
+                    job_title: currentJobApplication?.jobTitle,
+                    success: false,
+                    error: error.message
+                });
+            } finally {
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalHTML;
+            }
+        }
+
+        function validateApplicationForm() {
+            const form = document.getElementById('application-form');
+            const requiredFields = form.querySelectorAll('input[required], textarea[required]');
+            const emailField = form.querySelector('input[type="email"]');
+            const fileField = form.querySelector('input[type="file"]');
+            
+            let isValid = true;
+            
+            // Clear previous errors
+            form.querySelectorAll('.field-error').forEach(error => error.remove());
+            
+            // Validate required fields
+            requiredFields.forEach(field => {
+                const value = field.value.trim();
+                
+                if (!value) {
+                    showFieldError(field, 'This field is required');
+                    isValid = false;
+                } else if (field.name === 'name' && value.length < 2) {
+                    showFieldError(field, 'Name must be at least 2 characters');
+                    isValid = false;
+                } else if (field.name === 'message' && value.length < 50) {
+                    showFieldError(field, 'Please provide more details (minimum 50 characters)');
+                    isValid = false;
+                }
+            });
+            
+            // Validate email
+            if (emailField && emailField.value && !isValidEmail(emailField.value)) {
+                showFieldError(emailField, 'Please enter a valid email address');
+                isValid = false;
+            }
+            
+            // Validate file upload
+            if (fileField && fileField.files.length > 0) {
+                const file = fileField.files[0];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                
+                if (file.size > maxSize) {
+                    showFieldError(fileField, 'File size must be less than 5MB');
+                    isValid = false;
+                } else if (!allowedTypes.includes(file.type)) {
+                    showFieldError(fileField, 'Please upload a PDF, DOC, or DOCX file');
+                    isValid = false;
+                }
+            }
+            
+            return isValid;
+        }
+
+        function showFieldError(field, message) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'field-error';
+            errorElement.style.cssText = `
+                color: #dc2626;
+                font-size: 0.875rem;
+                margin-top: 0.25rem;
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            `;
+            errorElement.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+                <span>${message}</span>
+            `;
+            
+            field.parentNode.appendChild(errorElement);
+            field.style.borderColor = '#dc2626';
+        }
+
+        function showApplicationSuccess() {
+            const alertElement = document.createElement('div');
+            alertElement.style.cssText = `
+                position: fixed;
+                top: 2rem;
+                right: 2rem;
+                background: #f0fdf4;
+                border: 1px solid #22c55e;
+                color: #15803d;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                z-index: 10001;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                max-width: 400px;
+            `;
+            alertElement.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
+                <div>
+                    <div style="font-weight: 600;">Application Submitted!</div>
+                    <div style="font-size: 0.875rem;">Thank you for applying. We'll review your application and get back to you soon.</div>
+                </div>
+            `;
+            
+            document.body.appendChild(alertElement);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (alertElement.parentNode) {
+                    alertElement.style.opacity = '0';
+                    alertElement.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        alertElement.parentNode.removeChild(alertElement);
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        function showApplicationError() {
+            const alertElement = document.createElement('div');
+            alertElement.style.cssText = `
+                position: fixed;
+                top: 2rem;
+                right: 2rem;
+                background: #fef2f2;
+                border: 1px solid #ef4444;
+                color: #dc2626;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                z-index: 10001;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                max-width: 400px;
+            `;
+            alertElement.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+                <div>
+                    <div style="font-weight: 600;">Error</div>
+                    <div style="font-size: 0.875rem;">There was an error submitting your application. Please try again.</div>
+                </div>
+            `;
+            
+            document.body.appendChild(alertElement);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (alertElement.parentNode) {
+                    alertElement.style.opacity = '0';
+                    alertElement.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        alertElement.parentNode.removeChild(alertElement);
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        async function simulateApplicationSubmission(formData) {
+            // Simulate API delay
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Simulate random success/failure for demo
+            if (Math.random() > 0.1) { // 90% success rate
+                console.log('Application submitted:', Object.fromEntries(formData.entries()));
+                return { success: true };
+            } else {
+                throw new Error('Simulated server error');
+            }
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('application-modal');
+            if (e.target === modal) {
+                closeApplicationModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('application-modal');
+                if (modal.style.display === 'flex') {
+                    closeApplicationModal();
+                }
+            }
+        });
+
+        // Job filtering functionality
+        function filterJobs(criteria) {
+            const jobCards = document.querySelectorAll('.card[id$="-dev"], .card[id$="-engineer"]');
+            
+            jobCards.forEach(card => {
+                const jobTitle = card.querySelector('h2').textContent.toLowerCase();
+                const jobLocation = card.querySelector('[style*="margin-right: 0.25rem"]').parentElement.textContent.toLowerCase();
+                
+                let shouldShow = true;
+                
+                if (criteria.type && !jobTitle.includes(criteria.type.toLowerCase())) {
+                    shouldShow = false;
+                }
+                
+                if (criteria.location && !jobLocation.includes(criteria.location.toLowerCase())) {
+                    shouldShow = false;
+                }
+                
+                if (shouldShow) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            trackEvent('jobs_filtered', {
+                filter_criteria: criteria,
+                visible_jobs: document.querySelectorAll('.card[style*="display: block"]').length
+            });
+        }
+
+        // Job search functionality
+        function searchJobs(query) {
+            const jobCards = document.querySelectorAll('.card[id$="-dev"], .card[id$="-engineer"]');
+            const searchTerm = query.toLowerCase();
+            
+            jobCards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const requirements = Array.from(card.querySelectorAll('li')).map(li => li.textContent.toLowerCase()).join(' ');
+                
+                const isMatch = title.includes(searchTerm) || 
+                               description.includes(searchTerm) || 
+                               requirements.includes(searchTerm);
+                
+                if (isMatch) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    
+                    // Highlight matching text
+                    highlightSearchTerm(card, searchTerm);
+                } else {
+                    card.style.opacity = '0.3';
+                }
+            });
+            
+            trackEvent('jobs_searched', {
+                query: query,
+                results_count: document.querySelectorAll('.card[style*="opacity: 1"]').length
+            });
+        }
+
+        function highlightSearchTerm(element, term) {
+            const textElements = element.querySelectorAll('h2, p, li');
+            textElements.forEach(el => {
+                const text = el.textContent;
+                const regex = new RegExp(`(${term})`, 'gi');
+                const highlightedText = text.replace(regex, '<mark style="background: yellow; padding: 0.1rem;">$1</mark>');
+                
+                if (highlightedText !== text) {
+                    el.innerHTML = highlightedText;
+                }
+            });
+        }
+
+        // Add job alerts functionality
+        function createJobAlert(criteria) {
+            const alertData = {
+                ...criteria,
+                email: prompt('Enter your email to receive job alerts:'),
+                created_at: new Date().toISOString()
+            };
+            
+            if (alertData.email && isValidEmail(alertData.email)) {
+                // Store in localStorage for demo
+                const existingAlerts = JSON.parse(localStorage.getItem('job_alerts') || '[]');
+                existingAlerts.push(alertData);
+                localStorage.setItem('job_alerts', JSON.stringify(existingAlerts));
+                
+                trackEvent('job_alert_created', alertData);
+                showAlert('Job alert created! You\'ll be notified of new matching positions.', 'success');
+            } else if (alertData.email) {
+                showAlert('Please enter a valid email address.', 'error');
+            }
+        }
+
+        // Export career page utilities
+        window.CareerPageUtils = {
+            applyForJob,
+            closeApplicationModal,
+            filterJobs,
+            searchJobs,
+            createJobAlert
+        };
+
+        // Add job recommendation system
+        function getJobRecommendations(userProfile) {
+            const recommendations = [];
+            
+            // Simple recommendation logic based on user skills/experience
+            if (userProfile.skills.includes('react') || userProfile.skills.includes('javascript')) {
+                recommendations.push('frontend-dev');
+            }
+            
+            if (userProfile.skills.includes('node') || userProfile.skills.includes('backend')) {
+                recommendations.push('backend-dev');
+            }
+            
+            if (userProfile.skills.includes('docker') || userProfile.skills.includes('kubernetes')) {
+                recommendations.push('devops-engineer');
+            }
+            
+            if (userProfile.experience >= 5) {
+                // Senior positions
+                recommendations.push('tech-lead', 'senior-developer');
+            }
+            
+            return recommendations;
+        }
+
+        // Add salary estimation
+        function estimateSalary(jobId, location, experience) {
+            const salaryRanges = {
+                'frontend-dev': { min: 600000, max: 1200000 },
+                'backend-dev': { min: 700000, max: 1400000 },
+                'devops-engineer': { min: 800000, max: 1600000 }
+            };
+            
+            const baseRange = salaryRanges[jobId] || { min: 500000, max: 1000000 };
+            
+            // Adjust for location
+            const locationMultiplier = location.toLowerCase().includes('pune') ? 0.9 : 1.0;
+            
+            // Adjust for experience
+            const experienceMultiplier = 1 + (experience * 0.1);
+            
+            return {
+                min: Math.round(baseRange.min * locationMultiplier * experienceMultiplier),
+                max: Math.round(baseRange.max * locationMultiplier * experienceMultiplier)
+            };
+        }
+
+        // Add application tracking
+        function trackApplicationStatus(applicationId) {
+            // Simulate application status tracking
+            const statuses = ['submitted', 'under_review', 'interview_scheduled', 'decision_pending'];
+            const currentStatus = statuses[Math.floor(Math.random() * statuses.length)];
+            
+            return {
+                id: applicationId,
+                status: currentStatus,
+                last_updated: new Date().toISOString(),
+                next_steps: getNextSteps(currentStatus)
+            };
+        }
+
+        function getNextSteps(status) {
+            const nextSteps = {
+                'submitted': 'Your application is being reviewed by our team.',
+                'under_review': 'We are currently reviewing your qualifications.',
+                'interview_scheduled': 'Please check your email for interview details.',
+                'decision_pending': 'We will notify you of our decision soon.'
+            };
+            
+            return nextSteps[status] || 'Please contact us for updates.';
+        }
+
+        // Initialize page-specific features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add job bookmarking
+            const jobCards = document.querySelectorAll('.card[id$="-dev"], .card[id$="-engineer"]');
+            jobCards.forEach(card => {
+                const bookmarkBtn = document.createElement('button');
+                bookmarkBtn.innerHTML = '🔖';
+                bookmarkBtn.style.cssText = `
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    background: white;
+                    border: 1px solid var(--gray-300);
+                    border-radius: 50%;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                `;
+                
+                card.style.position = 'relative';
+                card.appendChild(bookmarkBtn);
+                
+                bookmarkBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const jobId = card.id;
+                    const jobTitle = card.querySelector('h2').textContent;
+                    
+                    // Toggle bookmark
+                    const isBookmarked = this.style.background === 'var(--primary)';
+                    if (isBookmarked) {
+                        this.style.background = 'white';
+                        this.style.color = 'var(--gray-600)';
+                        removeBookmark(jobId);
+                    } else {
+                        this.style.background = 'var(--primary)';
+                        this.style.color = 'white';
+                        addBookmark(jobId, jobTitle);
+                    }
+                });
+            });
+        });
+
+        function addBookmark(jobId, jobTitle) {
+            const bookmarks = JSON.parse(localStorage.getItem('job_bookmarks') || '[]');
+            if (!bookmarks.find(b => b.id === jobId)) {
+                bookmarks.push({ id: jobId, title: jobTitle, bookmarked_at: new Date().toISOString() });
+                localStorage.setItem('job_bookmarks', JSON.stringify(bookmarks));
+                
+                trackEvent('job_bookmarked', { job_id: jobId, job_title: jobTitle });
+                showAlert('Job bookmarked!', 'success');
+            }
+        }
+
+        function removeBookmark(jobId) {
+            const bookmarks = JSON.parse(localStorage.getItem('job_bookmarks') || '[]');
+            const filtered = bookmarks.filter(b => b.id !== jobId);
+            localStorage.setItem('job_bookmarks', JSON.stringify(filtered));
+            
+            trackEvent('job_unbookmarked', { job_id: jobId });
+            showAlert('Bookmark removed', 'info');
+        }
+    </script>
+</body>
+</html>

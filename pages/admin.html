@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Spintatech Services</title>
+    <meta name="description" content="Admin dashboard for Spintatech Services">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Admin-specific styles */
+        .admin-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .admin-table th {
+            background: var(--gray-50);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .admin-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .admin-table tr:hover {
+            background: var(--gray-50);
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .status-new { background: rgba(34, 197, 94, 0.1); color: #16a34a; }
+        .status-contacted { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .status-qualified { background: rgba(168, 85, 247, 0.1); color: #7c3aed; }
+        .status-closed { background: rgba(156, 163, 175, 0.1); color: #6b7280; }
+        
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card h3 {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .admin-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.5rem;
+            background: white;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Admin Header -->
+    <header style="background: var(--primary); color: white; padding: 1rem 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 1.5rem; color: white;">Spintatech Admin Panel</h1>
+                <button onclick="logout()" class="btn" style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3);">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Login Section -->
+        <section id="login-section" class="py-20">
+            <div class="container">
+                <div style="max-width: 400px; margin: 0 auto;">
+                    <div class="admin-card">
+                        <h2 class="mb-4 text-center">Admin Login</h2>
+                        <form id="admin-login-form">
+                            <div class="form-group">
+                                <label class="form-label">Admin Secret</label>
+                                <input type="password" id="admin-secret" class="form-input" placeholder="Enter admin secret" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">
+                                Login
+                            </button>
+                            <div id="login-error" style="color: #dc2626; margin-top: 1rem; display: none;">
+                                Unauthorized. Please check your credentials.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="admin-dashboard" style="display: none;" class="py-8">
+            <div class="container">
+                <!-- Stats Overview -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <h3>Total Leads</h3>
+                        <div class="value" id="total-leads">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>New This Week</h3>
+                        <div class="value" id="new-leads">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Job Applications</h3>
+                        <div class="value" id="total-applications">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Newsletter Subscribers</h3>
+                        <div class="value" id="total-subscribers">0</div>
+                    </div>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 2px solid var(--gray-200); flex-wrap: wrap;">
+                    <button class="tab-btn active" onclick="switchTab('leads')" data-tab="leads" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer; border-bottom: 2px solid var(--primary); margin-bottom: -2px;">
+                        Leads
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('applications')" data-tab="applications" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer;">
+                        Job Applications
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('subscribers')" data-tab="subscribers" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer;">
+                        Newsletter
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('analytics')" data-tab="analytics" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer;">
+                        Analytics
+                    </button>
+                </div>
+
+                <!-- Leads Tab -->
+                <div id="leads-tab" class="tab-content">
+                    <div class="admin-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h2 style="margin: 0;">Contact Leads</h2>
+                            <div class="admin-filters">
+                                <select class="filter-select" onchange="filterLeads(this.value)">
+                                    <option value="all">All Status</option>
+                                    <option value="new">New</option>
+                                    <option value="contacted">Contacted</option>
+                                    <option value="qualified">Qualified</option>
+                                    <option value="closed">Closed</option>
+                                </select>
+                                <input type="date" class="filter-select" onchange="filterByDate(this.value)">
+                                <button class="btn btn-outline" onclick="exportLeads()">
+                                    Export CSV
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div style="overflow-x: auto;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Company</th>
+                                        <th>Message</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leads-tbody">
+                                    <!-- Leads will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: between; align-items: center; margin-top: 1.5rem;">
+                            <div style="color: var(--gray-600); font-size: 0.875rem;">
+                                Showing <span id="leads-showing">0</span> of <span id="leads-total">0</span> leads
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 0.5rem;">
+                                <button class="btn btn-outline" onclick="previousPage('leads')">Previous</button>
+                                <button class="btn btn-outline" onclick="nextPage('leads')">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Applications Tab -->
+                <div id="applications-tab" class="tab-content" style="display: none;">
+                    <div class="admin-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h2 style="margin: 0;">Job Applications</h2>
+                            <div class="admin-filters">
+                                <select class="filter-select" onchange="filterApplications(this.value)">
+                                    <option value="all">All Jobs</option>
+                                    <option value="frontend-dev">Frontend Developer</option>
+                                    <option value="backend-dev">Backend Developer</option>
+                                    <option value="devops-engineer">DevOps Engineer</option>
+                                </select>
+                                <button class="btn btn-outline" onclick="exportApplications()">
+                                    Export CSV
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div style="overflow-x: auto;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Position</th>
+                                        <th>Message</th>
+                                        <th>Resume</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="applications-tbody">
+                                    <!-- Applications will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: between; align-items: center; margin-top: 1.5rem;">
+                            <div style="color: var(--gray-600); font-size: 0.875rem;">
+                                Showing <span id="applications-showing">0</span> of <span id="applications-total">0</span> applications
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 0.5rem;">
+                                <button class="btn btn-outline" onclick="previousPage('applications')">Previous</button>
+                                <button class="btn btn-outline" onclick="nextPage('applications')">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Subscribers Tab -->
+                <div id="subscribers-tab" class="tab-content" style="display: none;">
+                    <div class="admin-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h2 style="margin: 0;">Newsletter Subscribers</h2>
+                            <div class="admin-filters">
+                                <button class="btn btn-outline" onclick="exportSubscribers()">
+                                    Export CSV
+                                </button>
+                                <button class="btn btn-primary" onclick="showComposeNewsletter()">
+                                    Compose Newsletter
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div style="overflow-x: auto;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="subscribers-tbody">
+                                    <!-- Subscribers will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div id="analytics-tab" class="tab-content" style="display: none;">
+                    <div class="admin-card">
+                        <h2 class="mb-4">Analytics Overview</h2>
+                        
+                        <!-- Time Range Selector -->
+                        <div class="admin-filters" style="margin-bottom: 2rem;">
+                            <select class="filter-select" onchange="updateAnalytics(this.value)">
+                                <option value="7">Last 7 Days</option>
+                                <option value="30">Last 30 Days</option>
+                                <option value="90">Last 90 Days</option>
+                                <option value="365">Last Year</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Analytics Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                            <!-- Lead Sources -->
+                            <div style="background: var(--gray-50); padding: 1.5rem; border-radius: 0.75rem;">
+                                <h3 style="margin-bottom: 1rem;">Lead Sources</h3>
+                                <div id="lead-sources">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Website Contact Form</span>
+                                        <span style="font-weight: 600;">45%</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Direct Email</span>
+                                        <span style="font-weight: 600;">30%</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Chat Widget</span>
+                                        <span style="font-weight: 600;">15%</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Phone</span>
+                                        <span style="font-weight: 600;">10%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Conversion Funnel -->
+                            <div style="background: var(--gray-50); padding: 1.5rem; border-radius: 0.75rem;">
+                                <h3 style="margin-bottom: 1rem;">Conversion Funnel</h3>
+                                <div id="conversion-funnel">
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                            <span>Visitors</span>
+                                            <span>10,000</span>
+                                        </div>
+                                        <div style="height: 8px; background: var(--gray-200); border-radius: 4px;">
+                                            <div style="width: 100%; height: 100%; background: var(--primary); border-radius: 4px;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                            <span>Leads</span>
+                                            <span>500</span>
+                                        </div>
+                                        <div style="height: 8px; background: var(--gray-200); border-radius: 4px;">
+                                            <div style="width: 50%; height: 100%; background: var(--primary); border-radius: 4px;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                            <span>Qualified</span>
+                                            <span>150</span>
+                                        </div>
+                                        <div style="height: 8px; background: var(--gray-200); border-radius: 4px;">
+                                            <div style="width: 30%; height: 100%; background: var(--primary); border-radius: 4px;"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                            <span>Customers</span>
+                                            <span>50</span>
+                                        </div>
+                                        <div style="height: 8px; background: var(--gray-200); border-radius: 4px;">
+                                            <div style="width: 10%; height: 100%; background: #16a34a; border-radius: 4px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Popular Pages -->
+                            <div style="background: var(--gray-50); padding: 1.5rem; border-radius: 0.75rem;">
+                                <h3 style="margin-bottom: 1rem;">Popular Pages</h3>
+                                <div id="popular-pages">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Home</span>
+                                        <span style="font-weight: 600;">3,500</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Services</span>
+                                        <span style="font-weight: 600;">2,100</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Case Studies</span>
+                                        <span style="font-weight: 600;">1,800</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Contact</span>
+                                        <span style="font-weight: 600;">1,200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lead Details Modal -->
+    <div id="lead-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 10000; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="background: white; border-radius: 1rem; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto;">
+            <div style="padding: 1.5rem; border-bottom: 1px solid var(--gray-200);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2 style="margin: 0;">Lead Details</h2>
+                    <button onclick="closeLeadModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-500);">&times;</button>
+                </div>
+            </div>
+            <div style="padding: 1.5rem;" id="lead-details">
+                <!-- Lead details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Mock data for demo
+        const mockLeads = [
+            {
+                id: 1,
+                date: '2024-08-15',
+                name: 'John Doe',
+                email: 'john.doe@example.com',
+                company: 'Tech Corp',
+                message: 'Interested in cloud migration services for our enterprise applications.',
+                status: 'new',
+                source: 'website',
+                locale: 'en'
+            },
+            {
+                id: 2,
+                date: '2024-08-14',
+                name: 'Jane Smith',
+                email: 'jane.smith@company.com',
+                company: 'Finance Inc',
+                message: 'Need help with digital transformation and AI implementation.',
+                status: 'contacted',
+                source: 'website',
+                locale: 'en'
+            },
+            {
+                id: 3,
+                date: '2024-08-13',
+                name: 'Raj Kumar',
+                email: 'raj@startup.in',
+                company: 'StartupX',
+                message: 'Looking for DevOps consulting and Kubernetes implementation.',
+                status: 'qualified',
+                source: 'chat',
+                locale: 'hi'
+            }
+        ];
+
+        const mockApplications = [
+            {
+                id: 1,
+                date: '2024-08-15',
+                name: 'Alice Johnson',
+                email: 'alice@email.com',
+                position: 'Frontend Developer (React)',
+                jobId: 'frontend-dev',
+                message: 'Experienced React developer with 5 years of experience...',
+                resume: 'alice_johnson_resume.pdf',
+                portfolio: 'https://alice-portfolio.com'
+            },
+            {
+                id: 2,
+                date: '2024-08-14',
+                name: 'Bob Wilson',
+                email: 'bob@email.com',
+                position: 'Backend Developer (Node.js)',
+                jobId: 'backend-dev',
+                message: 'Full-stack developer specializing in Node.js and MongoDB...',
+                resume: 'bob_wilson_resume.pdf',
+                portfolio: 'https://github.com/bobwilson'
+            }
+        ];
+
+        const mockSubscribers = [
+            { id: 1, date: '2024-08-15', email: 'subscriber1@email.com', status: 'active' },
+            { id: 2, date: '2024-08-14', email: 'subscriber2@email.com', status: 'active' },
+            { id: 3, date: '2024-08-13', email: 'subscriber3@email.com', status: 'unsubscribed' }
+        ];
+
+        let currentTab = 'leads';
+        let currentPage = { leads: 1, applications: 1, subscribers: 1 };
+        const itemsPerPage = 10;
+        let isAuthenticated = false;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const adminForm = document.getElementById('admin-login-form');
+            adminForm.addEventListener('submit', handleLogin);
+            
+            // Check if already authenticated (for demo)
+            const savedAuth = sessionStorage.getItem('admin_authenticated');
+            if (savedAuth === 'true') {
+                showDashboard();
+            }
+        });
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const secret = document.getElementById('admin-secret').value;
+            
+            // Simple authentication (in production, this would be server-side)
+            if (secret === 'spintatechadmin') {
+                isAuthenticated = true;
+                sessionStorage.setItem('admin_authenticated', 'true');
+                showDashboard();
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        }
+
+        function showDashboard() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('admin-dashboard').style.display = 'block';
+            
+            // Load initial data
+            loadStats();
+            loadLeads();
+            loadApplications();
+            loadSubscribers();
+            updateAnalytics('30');
+        }
+
+        function logout() {
+            isAuthenticated = false;
+            sessionStorage.removeItem('admin_authenticated');
+            document.getElementById('login-section').style.display = 'block';
+            document.getElementById('admin-dashboard').style.display = 'none';
+            document.getElementById('admin-secret').value = '';
+            document.getElementById('login-error').style.display = 'none';
+        }
+
+        function loadStats() {
+            // Calculate stats from mock data
+            const totalLeads = mockLeads.length;
+            const newLeads = mockLeads.filter(l => {
+                const leadDate = new Date(l.date);
+                const weekAgo = new Date();
+                weekAgo.setDate(weekAgo.getDate() - 7);
+                return leadDate >= weekAgo;
+            }).length;
+            
+            document.getElementById('total-leads').textContent = totalLeads;
+            document.getElementById('new-leads').textContent = newLeads;
+            document.getElementById('total-applications').textContent = mockApplications.length;
+            document.getElementById('total-subscribers').textContent = mockSubscribers.filter(s => s.status === 'active').length;
+        }
+
+        function loadLeads() {
+            const tbody = document.getElementById('leads-tbody');
+            const start = (currentPage.leads - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageLeads = mockLeads.slice(start, end);
+            
+            tbody.innerHTML = '';
+            pageLeads.forEach(lead => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${lead.date}</td>
+                    <td>${lead.name}</td>
+                    <td>${lead.email}</td>
+                    <td>${lead.company || '-'}</td>
+                    <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${lead.message}</td>
+                    <td><span class="status-badge status-${lead.status}">${lead.status}</span></td>
+                    <td>
+                        <button onclick="viewLead(${lead.id})" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">View</button>
+                        <button onclick="updateLeadStatus(${lead.id})" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">Update</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+            
+            document.getElementById('leads-showing').textContent = pageLeads.length;
+            document.getElementById('leads-total').textContent = mockLeads.length;
+        }
+
+        function loadApplications() {
+            const tbody = document.getElementById('applications-tbody');
+            const start = (currentPage.applications - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageApps = mockApplications.slice(start, end);
+            
+            tbody.innerHTML = '';
+            pageApps.forEach(app => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${app.date}</td>
+                    <td>${app.name}</td>
+                    <td>${app.email}</td>
+                    <td>${app.position}</td>
+                    <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${app.message}</td>
+                    <td><a href="#" style="color: var(--primary);">${app.resume}</a></td>
+                    <td>
+                        <button onclick="viewApplication(${app.id})" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">View</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+            
+            document.getElementById('applications-showing').textContent = pageApps.length;
+            document.getElementById('applications-total').textContent = mockApplications.length;
+        }
+
+        function loadSubscribers() {
+            const tbody = document.getElementById('subscribers-tbody');
+            tbody.innerHTML = '';
+            
+            mockSubscribers.forEach(sub => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${sub.date}</td>
+                    <td>${sub.email}</td>
+                    <td><span class="status-badge status-${sub.status === 'active' ? 'new' : 'closed'}">${sub.status}</span></td>
+                    <td>
+                        <button onclick="toggleSubscriberStatus(${sub.id})" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">
+                            ${sub.status === 'active' ? 'Unsubscribe' : 'Resubscribe'}
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function switchTab(tab) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.style.borderBottom = 'none';
+                btn.style.marginBottom = '0';
+            });
+            
+            // Show selected tab
+            document.getElementById(`${tab}-tab`).style.display = 'block';
+            
+            // Add active class to clicked button
+            const activeBtn = document.querySelector(`[data-tab="${tab}"]`);
+            activeBtn.style.borderBottom = '2px solid var(--primary)';
+            activeBtn.style.marginBottom = '-2px';
+            
+            currentTab = tab;
+        }
+
+        function viewLead(id) {
+            const lead = mockLeads.find(l => l.id === id);
+            if (!lead) return;
+            
+            const modal = document.getElementById('lead-modal');
+            const details = document.getElementById('lead-details');
+            
+            details.innerHTML = `
+                <div style="display: grid; gap: 1rem;">
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Name</label>
+                        <p style="margin-top: 0.25rem;">${lead.name}</p>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Email</label>
+                        <p style="margin-top: 0.25rem;">${lead.email}</p>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Company</label>
+                        <p style="margin-top: 0.25rem;">${lead.company || 'Not provided'}</p>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Message</label>
+                        <p style="margin-top: 0.25rem;">${lead.message}</p>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Date</label>
+                        <p style="margin-top: 0.25rem;">${lead.date}</p>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Source</label>
+                        <p style="margin-top: 0.25rem;">${lead.source}</p>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Language</label>
+                        <p style="margin-top: 0.25rem;">${lead.locale === 'hi' ? 'Hindi' : 'English'}</p>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Status</label>
+                        <select class="filter-select" style="margin-top: 0.25rem;" onchange="updateLeadStatusFromModal(${lead.id}, this.value)">
+                            <option value="new" ${lead.status === 'new' ? 'selected' : ''}>New</option>
+                            <option value="contacted" ${lead.status === 'contacted' ? 'selected' : ''}>Contacted</option>
+                            <option value="qualified" ${lead.status === 'qualified' ? 'selected' : ''}>Qualified</option>
+                            <option value="closed" ${lead.status === 'closed' ? 'selected' : ''}>Closed</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; color: var(--gray-600); font-size: 0.875rem;">Notes</label>
+                        <textarea class="form-textarea" style="margin-top: 0.25rem;" placeholder="Add notes about this lead..."></textarea>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button class="btn btn-primary" onclick="closeLeadModal()">Close</button>
+                    <button class="btn btn-outline" onclick="sendEmail('${lead.email}')">Send Email</button>
+                </div>
+            `;
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeLeadModal() {
+            document.getElementById('lead-modal').style.display = 'none';
+        }
+
+        function updateLeadStatus(id) {
+            const lead = mockLeads.find(l => l.id === id);
+            if (!lead) return;
+            
+            // Cycle through statuses
+            const statuses = ['new', 'contacted', 'qualified', 'closed'];
+            const currentIndex = statuses.indexOf(lead.status);
+            const nextIndex = (currentIndex + 1) % statuses.length;
+            lead.status = statuses[nextIndex];
+            
+            loadLeads();
+        }
+
+        function updateLeadStatusFromModal(id, newStatus) {
+            const lead = mockLeads.find(l => l.id === id);
+            if (lead) {
+                lead.status = newStatus;
+                loadLeads();
+            }
+        }
+
+        function sendEmail(email) {
+            window.location.href = `mailto:${email}`;
+        }
+
+        function viewApplication(id) {
+            const app = mockApplications.find(a => a.id === id);
+            if (!app) return;
+            
+            alert(`Application Details:\n\nName: ${app.name}\nEmail: ${app.email}\nPosition: ${app.position}\n\nMessage: ${app.message}\n\nPortfolio: ${app.portfolio || 'Not provided'}`);
+        }
+
+        function toggleSubscriberStatus(id) {
+            const sub = mockSubscribers.find(s => s.id === id);
+            if (sub) {
+                sub.status = sub.status === 'active' ? 'unsubscribed' : 'active';
+                loadSubscribers();
+                loadStats();
+            }
+        }
+
+        function filterLeads(status) {
+            // In a real app, this would filter the data
+            console.log('Filtering leads by status:', status);
+            loadLeads();
+        }
+
+        function filterByDate(date) {
+            console.log('Filtering by date:', date);
+            loadLeads();
+        }
+
+        function filterApplications(jobId) {
+            console.log('Filtering applications by job:', jobId);
+            loadApplications();
+        }
+
+        function exportLeads() {
+            // Simulate CSV export
+            const csv = 'Date,Name,Email,Company,Message,Status\n' +
+                mockLeads.map(l => `${l.date},${l.name},${l.email},${l.company || ''},${l.message},${l.status}`).join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'leads.csv';
+            a.click();
+        }
+
+        function exportApplications() {
+            const csv = 'Date,Name,Email,Position,Message\n' +
+                mockApplications.map(a => `${a.date},${a.name},${a.email},${a.position},${a.message}`).join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'applications.csv';
+            a.click();
+        }
+
+        function exportSubscribers() {
+            const csv = 'Date,Email,Status\n' +
+                mockSubscribers.map(s => `${s.date},${s.email},${s.status}`).join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'subscribers.csv';
+            a.click();
+        }
+
+        function showComposeNewsletter() {
+            alert('Newsletter composer would open here. This feature would allow you to compose and send newsletters to all active subscribers.');
+        }
+
+        function previousPage(type) {
+            if (currentPage[type] > 1) {
+                currentPage[type]--;
+                if (type === 'leads') loadLeads();
+                else if (type === 'applications') loadApplications();
+            }
+        }
+
+        function nextPage(type) {
+            const totalItems = type === 'leads' ? mockLeads.length : mockApplications.length;
+            const maxPage = Math.ceil(totalItems / itemsPerPage);
+            
+            if (currentPage[type] < maxPage) {
+                currentPage[type]++;
+                if (type === 'leads') loadLeads();
+                else if (type === 'applications') loadApplications();
+            }
+        }
+
+        function updateAnalytics(days) {
+            console.log('Updating analytics for', days, 'days');
+            // In a real app, this would fetch and update analytics data
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('lead-modal');
+            if (e.target === modal) {
+                closeLeadModal();
+            }
+        });
+    </script>
+</body>
+</html>

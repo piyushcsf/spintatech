@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal | Spintatech Services</title>
+    <meta name="description" content="Client portal for Spintatech Services - Access your projects, files, and updates">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Client Portal specific styles */
+        .client-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .project-card {
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .status-planning { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .status-in-progress { background: rgba(168, 85, 247, 0.1); color: #7c3aed; }
+        .status-testing { background: rgba(245, 158, 11, 0.1); color: #d97706; }
+        .status-completed { background: rgba(34, 197, 94, 0.1); color: #16a34a; }
+        .status-on-hold { background: rgba(156, 163, 175, 0.1); color: #6b7280; }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .file-item:hover {
+            background: var(--gray-50);
+            border-color: var(--primary);
+        }
+        
+        .file-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: white;
+            font-size: 0.75rem;
+        }
+        
+        .file-pdf { background: #dc2626; }
+        .file-doc { background: #2563eb; }
+        .file-img { background: #16a34a; }
+        .file-zip { background: #7c3aed; }
+        .file-default { background: var(--gray-500); }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.8125rem;
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: var(--gray-200);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .client-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gray-200);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+        
+        .notification-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+            background: rgba(30, 58, 138, 0.05);
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin-bottom: 1rem;
+        }
+        
+        .notification-icon {
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Client Portal Header -->
+    <header style="background: var(--primary); color: white; padding: 1rem 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <h1 style="font-size: 1.5rem; color: white;">Spintatech Client Portal</h1>
+                    <span id="client-name" style="background: rgba(255, 255, 255, 0.2); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;"></span>
+                </div>
+                <button onclick="logout()" class="btn" style="background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3);">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Login Section -->
+        <section id="login-section" class="py-20">
+            <div class="container">
+                <div style="max-width: 400px; margin: 0 auto;">
+                    <div class="client-card">
+                        <h2 class="mb-4 text-center">Client Portal Access</h2>
+                        <form id="client-login-form">
+                            <div class="form-group">
+                                <label class="form-label">Client Access Code</label>
+                                <input type="password" id="client-secret" class="form-input" placeholder="Enter your access code" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">
+                                Access Portal
+                            </button>
+                            <div id="login-error" style="color: #dc2626; margin-top: 1rem; display: none;">
+                                Invalid access code. Please check your credentials.
+                            </div>
+                        </form>
+                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-200); text-align: center;">
+                            <p style="font-size: 0.875rem; color: var(--gray-600);">
+                                Don't have an access code? <a href="contact.html" style="color: var(--primary);">Contact us</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Dashboard -->
+        <section id="client-dashboard" style="display: none;" class="py-8">
+            <div class="container">
+                <!-- Welcome Section -->
+                <div class="client-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <h2 style="margin-bottom: 0.5rem;">Welcome back, <span id="welcome-name"></span>!</h2>
+                            <p style="color: var(--gray-600);">Here's an overview of your projects and recent updates.</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.875rem; color: var(--gray-500);">Last login</div>
+                            <div style="font-weight: 600;" id="last-login">August 28, 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="client-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="active-projects">0</div>
+                        <div class="stat-label">Active Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="completed-projects">0</div>
+                        <div class="stat-label">Completed Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="total-files">0</div>
+                        <div class="stat-label">Project Files</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="next-milestone">0</div>
+                        <div class="stat-label">Days to Next Milestone</div>
+                    </div>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 2px solid var(--gray-200); flex-wrap: wrap;">
+                    <button class="tab-btn active" onclick="switchTab('projects')" data-tab="projects" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer; border-bottom: 2px solid var(--primary); margin-bottom: -2px;">
+                        Projects
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('files')" data-tab="files" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer;">
+                        Files & Documents
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('timeline')" data-tab="timeline" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer;">
+                        Project Timeline
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('notifications')" data-tab="notifications" style="padding: 0.75rem 1.5rem; background: none; border: none; font-weight: 600; cursor: pointer;">
+                        Notifications
+                    </button>
+                </div>
+
+                <!-- Projects Tab -->
+                <div id="projects-tab" class="tab-content">
+                    <div class="client-card">
+                        <h2 class="mb-4">Your Projects</h2>
+                        <div id="projects-container">
+                            <!-- Projects will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Files Tab -->
+                <div id="files-tab" class="tab-content" style="display: none;">
+                    <div class="client-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h2 style="margin: 0;">Files & Documents</h2>
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <select id="file-filter" style="padding: 0.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem;">
+                                    <option value="all">All Files</option>
+                                    <option value="documents">Documents</option>
+                                    <option value="images">Images</option>
+                                    <option value="archives">Archives</option>
+                                </select>
+                                <button class="btn btn-outline" onclick="downloadAllFiles()">
+                                    Download All
+                                </button>
+                            </div>
+                        </div>
+                        <div id="files-container">
+                            <!-- Files will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Tab -->
+                <div id="timeline-tab" class="tab-content" style="display: none;">
+                    <div class="client-card">
+                        <h2 class="mb-4">Project Timeline</h2>
+                        <div id="timeline-container">
+                            <!-- Timeline will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Tab -->
+                <div id="notifications-tab" class="tab-content" style="display: none;">
+                    <div class="client-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <h2 style="margin: 0;">Notifications</h2>
+                            <button class="btn btn-outline" onclick="markAllAsRead()">
+                                Mark All as Read
+                            </button>
+                        </div>
+                        <div id="notifications-container">
+                            <!-- Notifications will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 1rem; padding: 2rem; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 id="modal-project-name" style="margin: 0;">Project Details</h3>
+                <button onclick="closeProjectModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            </div>
+            <div id="modal-project-content">
+                <!-- Project details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // State management
+        let clientData = null;
+        let isAuthenticated = false;
+
+        // Mock translation function (replace with actual translations)
+        const t = (key) => {
+            const translations = {
+                'client.title': 'Client Portal',
+                'client.error': 'Invalid access code. Please check your credentials.',
+                'client.secret': 'Enter your access code',
+                'client.login': 'Access Portal',
+                'client.projects': 'Your Projects',
+                'client.files': 'Files & Documents'
+            };
+            return translations[key] || key;
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if already authenticated (e.g., from session storage)
+            const savedAuth = sessionStorage.getItem('clientAuth');
+            if (savedAuth) {
+                const authData = JSON.parse(savedAuth);
+                handleSuccessfulAuth(authData);
+            }
+        });
+
+        // Login form submission
+        document.getElementById('client-login-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const secret = document.getElementById('client-secret').value;
+            const errorDiv = document.getElementById('login-error');
+            
+            try {
+                // Simulate API call (replace with actual API endpoint)
+                const response = await fetchClientData(secret);
+                
+                if (response.success) {
+                    // Save to session storage
+                    sessionStorage.setItem('clientAuth', JSON.stringify({
+                        secret: secret,
+                        data: response.data
+                    }));
+                    
+                    handleSuccessfulAuth({ secret, data: response.data });
+                } else {
+                    throw new Error('Authentication failed');
+                }
+            } catch (error) {
+                errorDiv.style.display = 'block';
+                errorDiv.textContent = t('client.error');
+            }
+        });
+
+        // Fetch client data (replace with actual API call)
+        async function fetchClientData(secret) {
+            // Simulate API call
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    // Mock data - replace with actual API call
+                    if (secret === 'demo123') {
+                        resolve({
+                            success: true,
+                            data: {
+                                clientName: 'Acme Corporation',
+                                projects: [
+                                    {
+                                        id: 1,
+                                        name: 'Website Redesign',
+                                        status: 'in-progress',
+                                        progress: 65,
+                                        description: 'Complete redesign of corporate website',
+                                        startDate: '2024-07-01',
+                                        expectedEnd: '2024-09-30',
+                                        team: ['John Doe', 'Jane Smith']
+                                    },
+                                    {
+                                        id: 2,
+                                        name: 'Mobile App Development',
+                                        status: 'planning',
+                                        progress: 15,
+                                        description: 'iOS and Android app development',
+                                        startDate: '2024-08-15',
+                                        expectedEnd: '2024-12-31',
+                                        team: ['Bob Johnson', 'Alice Brown']
+                                    },
+                                    {
+                                        id: 3,
+                                        name: 'SEO Optimization',
+                                        status: 'completed',
+                                        progress: 100,
+                                        description: 'SEO audit and optimization',
+                                        startDate: '2024-06-01',
+                                        expectedEnd: '2024-07-31',
+                                        team: ['Mike Wilson']
+                                    }
+                                ],
+                                files: [
+                                    {
+                                        name: 'Project_Proposal.pdf',
+                                        url: '#',
+                                        type: 'pdf',
+                                        size: '2.4 MB',
+                                        uploadDate: '2024-08-01'
+                                    },
+                                    {
+                                        name: 'Brand_Guidelines.pdf',
+                                        url: '#',
+                                        type: 'pdf',
+                                        size: '5.1 MB',
+                                        uploadDate: '2024-08-05'
+                                    },
+                                    {
+                                        name: 'Wireframes.zip',
+                                        url: '#',
+                                        type: 'zip',
+                                        size: '12.3 MB',
+                                        uploadDate: '2024-08-10'
+                                    },
+                                    {
+                                        name: 'Logo_Variations.zip',
+                                        url: '#',
+                                        type: 'zip',
+                                        size: '8.7 MB',
+                                        uploadDate: '2024-08-12'
+                                    }
+                                ],
+                                timeline: [
+                                    {
+                                        date: '2024-08-28',
+                                        title: 'Homepage Design Completed',
+                                        description: 'The homepage design has been finalized and approved.'
+                                    },
+                                    {
+                                        date: '2024-08-25',
+                                        title: 'Development Phase Started',
+                                        description: 'Frontend development has begun on the new website.'
+                                    },
+                                    {
+                                        date: '2024-08-20',
+                                        title: 'Wireframes Approved',
+                                        description: 'All wireframes have been reviewed and approved.'
+                                    },
+                                    {
+                                        date: '2024-08-15',
+                                        title: 'Project Kickoff',
+                                        description: 'Initial project meeting completed.'
+                                    }
+                                ],
+                                notifications: [
+                                    {
+                                        type: 'info',
+                                        title: 'New file uploaded',
+                                        message: 'Brand_Guidelines.pdf has been added to your project files.',
+                                        date: '2024-08-28',
+                                        read: false
+                                    },
+                                    {
+                                        type: 'success',
+                                        title: 'Milestone completed',
+                                        message: 'Homepage design phase has been completed successfully.',
+                                        date: '2024-08-27',
+                                        read: false
+                                    },
+                                    {
+                                        type: 'info',
+                                        title: 'Meeting scheduled',
+                                        message: 'Review meeting scheduled for September 5, 2024 at 2:00 PM.',
+                                        date: '2024-08-26',
+                                        read: true
+                                    }
+                                ]
+                            }
+                        });
+                    } else {
+                        resolve({ success: false });
+                    }
+                }, 1000);
+            });
+        }
+
+        // Handle successful authentication
+        function handleSuccessfulAuth(authData) {
+            isAuthenticated = true;
+            clientData = authData.data;
+            
+            // Hide login section and show dashboard
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('client-dashboard').style.display = 'block';
+            
+            // Update UI with client data
+            updateDashboard();
+        }
+
+        // Update dashboard with client data
+        function updateDashboard() {
+            if (!clientData) return;
+            
+            // Update header
+            document.getElementById('client-name').textContent = clientData.clientName;
+            document.getElementById('welcome-name').textContent = clientData.clientName;
+            
+            // Update stats
+            const activeProjects = clientData.projects.filter(p => p.status !== 'completed').length;
+            const completedProjects = clientData.projects.filter(p => p.status === 'completed').length;
+            
+            document.getElementById('active-projects').textContent = activeProjects;
+            document.getElementById('completed-projects').textContent = completedProjects;
+            document.getElementById('total-files').textContent = clientData.files.length;
+            document.getElementById('next-milestone').textContent = '7'; // Mock value
+            
+            // Populate projects
+            populateProjects();
+            populateFiles();
+            populateTimeline();
+            populateNotifications();
+        }
+
+        // Populate projects
+        function populateProjects() {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+            
+            clientData.projects.forEach(project => {
+                const statusClass = `status-${project.status.replace('-', '-')}`;
+                const statusText = project.status.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+                
+                const projectCard = `
+                    <div class="project-card">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <div>
+                                <h3 style="margin: 0 0 0.5rem 0;">${project.name}</h3>
+                                <p style="color: var(--gray-600); margin: 0;">${project.description}</p>
+                            </div>
+                            <span class="status-indicator ${statusClass}">
+                                ${statusText}
+                            </span>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.875rem; color: var(--gray-600);">Progress</span>
+                                <span style="font-size: 0.875rem; font-weight: 600;">${project.progress}%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${project.progress}%"></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div style="display: flex; gap: 2rem; font-size: 0.875rem;">
+                                <div>
+                                    <span style="color: var(--gray-500);">Start:</span>
+                                    <span style="font-weight: 600;">${formatDate(project.startDate)}</span>
+                                </div>
+                                <div>
+                                    <span style="color: var(--gray-500);">Expected End:</span>
+                                    <span style="font-weight: 600;">${formatDate(project.expectedEnd)}</span>
+                                </div>
+                            </div>
+                            <button onclick="viewProjectDetails(${project.id})" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += projectCard;
+            });
+        }
+
+        // Populate files
+        function populateFiles() {
+            const container = document.getElementById('files-container');
+            container.innerHTML = '';
+            
+            clientData.files.forEach(file => {
+                const fileIcon = getFileIcon(file.type);
+                const fileItem = `
+                    <div class="file-item">
+                        <div class="file-icon file-${file.type}">${fileIcon}</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">${file.name}</div>
+                            <div style="font-size: 0.875rem; color: var(--gray-500);">
+                                ${file.size} • Uploaded ${formatDate(file.uploadDate)}
+                            </div>
+                        </div>
+                        <a href="${file.url}" download class="btn btn-outline" style="padding: 0.5rem 1rem;">
+                            Download
+                        </a>
+                    </div>
+                `;
+                container.innerHTML += fileItem;
+            });
+        }
+
+        // Populate timeline
+        function populateTimeline() {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = '';
+            
+            clientData.timeline.forEach(item => {
+                const timelineItem = `
+                    <div class="timeline-item">
+                        <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.25rem;">
+                            ${formatDate(item.date)}
+                        </div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">${item.title}</div>
+                        <div style="color: var(--gray-600);">${item.description}</div>
+                    </div>
+                `;
+                container.innerHTML += timelineItem;
+            });
+        }
+
+        // Populate notifications
+        function populateNotifications() {
+            const container = document.getElementById('notifications-container');
+            container.innerHTML = '';
+            
+            clientData.notifications.forEach(notification => {
+                const icon = getNotificationIcon(notification.type);
+                const notificationItem = `
+                    <div class="notification-item" style="${notification.read ? 'opacity: 0.7;' : ''}">
+                        <div class="notification-icon">${icon}</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">${notification.title}</div>
+                            <div style="color: var(--gray-600); margin-bottom: 0.25rem;">${notification.message}</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">${formatDate(notification.date)}</div>
+                        </div>
+                        ${!notification.read ? '<div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>' : ''}
+                    </div>
+                `;
+                container.innerHTML += notificationItem;
+            });
+        }
+
+        // Switch tabs
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.borderBottom = 'none';
+                btn.style.marginBottom = '0';
+            });
+            
+            // Show selected tab
+            document.getElementById(`${tabName}-tab`).style.display = 'block';
+            
+            // Add active class to clicked button
+            const activeBtn = document.querySelector(`[data-tab="${tabName}"]`);
+            activeBtn.classList.add('active');
+            activeBtn.style.borderBottom = '2px solid var(--primary)';
+            activeBtn.style.marginBottom = '-2px';
+        }
+
+        // View project details
+        function viewProjectDetails(projectId) {
+            const project = clientData.projects.find(p => p.id === projectId);
+            if (!project) return;
+            
+            const modal = document.getElementById('project-modal');
+            document.getElementById('modal-project-name').textContent = project.name;
+            
+            const content = `
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;">Description</h4>
+                    <p style="color: var(--gray-600);">${project.description}</p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;">Status</h4>
+                    <span class="status-indicator status-${project.status.replace('-', '-')}">
+                        ${project.status.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                    </span>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;">Progress</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${project.progress}%"></div>
+                    </div>
+                    <div style="text-align: right; margin-top: 0.25rem; font-size: 0.875rem; color: var(--gray-600);">${project.progress}% Complete</div>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;">Timeline</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <div style="font-size: 0.875rem; color: var(--gray-500);">Start Date</div>
+                            <div style="font-weight: 600;">${formatDate(project.startDate)}</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.875rem; color: var(--gray-500);">Expected End</div>
+                            <div style="font-weight: 600;">${formatDate(project.expectedEnd)}</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">Team Members</h4>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        ${project.team.map(member => `
+                            <span style="background: var(--gray-100); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">
+                                ${member}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('modal-project-content').innerHTML = content;
+            modal.style.display = 'flex';
+        }
+
+        // Close project modal
+        function closeProjectModal() {
+            document.getElementById('project-modal').style.display = 'none';
+        }
+
+        // Logout
+        function logout() {
+            sessionStorage.removeItem('clientAuth');
+            isAuthenticated = false;
+            clientData = null;
+            
+            // Reset form
+            document.getElementById('client-secret').value = '';
+            document.getElementById('login-error').style.display = 'none';
+            
+            // Show login section and hide dashboard
+            document.getElementById('login-section').style.display = 'block';
+            document.getElementById('client-dashboard').style.display = 'none';
+        }
+
+        // Helper functions
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        function getFileIcon(type) {
+            const icons = {
+                'pdf': 'PDF',
+                'doc': 'DOC',
+                'img': 'IMG',
+                'zip': 'ZIP'
+            };
+            return icons[type] || 'FILE';
+        }
+
+        function getNotificationIcon(type) {
+            const icons = {
+                'info': 'ℹ',
+                'success': '✓',
+                'warning': '⚠',
+                'error': '✕'
+            };
+            return icons[type] || 'ℹ';
+        }
+
+        function downloadAllFiles() {
+            alert('Download all files functionality would be implemented here');
+        }
+
+        function markAllAsRead() {
+            clientData.notifications.forEach(n => n.read = true);
+            populateNotifications();
+        }
+
+        // File filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileFilter = document.getElementById('file-filter');
+            if (fileFilter) {
+                fileFilter.addEventListener('change', function() {
+                    // Implement file filtering logic here
+                    console.log('Filter files by:', this.value);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
